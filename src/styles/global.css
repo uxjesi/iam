@@ -145,6 +145,7 @@ nav {
 .hero-photo {
   width: 100%;
   max-width: 440px;
+  height: auto; /* overrides the intrinsic height attr so aspect-ratio governs */
   aspect-ratio: 3/4;
   object-fit: cover;
   object-position: center top;
@@ -297,6 +298,7 @@ nav {
 
 .work-card-img {
   width: 100%;
+  height: auto; /* overrides the intrinsic height attr; .art-preview re-fixes it */
   display: block;
 }
 
@@ -372,6 +374,7 @@ nav {
 
 .about-photo {
   width: 100%;
+  height: auto; /* overrides the intrinsic height attr; keeps the natural ratio */
   display: block;
 }
 

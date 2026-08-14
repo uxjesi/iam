@@ -1,0 +1,75 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  lead: string;
+}
+
+const { eyebrow, title, lead } = Astro.props;
+---
+
+<section class="page-intro">
+  <div class="page-eyebrow">{eyebrow}</div>
+  <h1 class="page-title">{title}</h1>
+  <p class="page-lead">{lead}</p>
+  <div class="page-note"><slot /></div>
+</section>
+
+<style>
+  .page-intro {
+    min-height: 70vh;
+    padding: 160px 48px 96px;
+    max-width: 780px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .page-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 24px;
+    font-weight: 400;
+  }
+
+  .page-title {
+    font-family: var(--serif);
+    font-size: clamp(44px, 6vw, 72px);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 28px;
+  }
+
+  .page-lead {
+    font-family: var(--serif);
+    font-size: clamp(18px, 2.2vw, 24px);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 520px;
+    border-left: 2px solid var(--teal);
+    padding-left: 20px;
+    margin-bottom: 40px;
+  }
+
+  .page-note {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--ink-muted);
+    max-width: 520px;
+    padding-top: 24px;
+    border-top: 0.5px solid var(--ink-faint);
+  }
+
+  @media (max-width: 768px) {
+    .page-intro {
+      padding: 120px 24px 64px;
+    }
+  }
+</style>
