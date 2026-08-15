@@ -1,125 +1,363 @@
 ---
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
-import Door from '../components/Door.astro';
-import WorkCard from '../components/WorkCard.astro';
-import CardBanner from '../components/CardBanner.astro';
+import CaseCard from '../components/CaseCard.astro';
 
-import creamcoat from '../assets/img/selfie-creamcoat.jpeg';
-import blondie from '../assets/img/selfie-blondie.JPG';
-import red from '../assets/img/selfie-red.png';
-import nymph from '../assets/img/selfie-nymph.png';
-import peru from '../assets/img/selfie-peru.jpeg';
-import frida from '../assets/img/Frida-Portrait.JPG';
+import portrait from '../assets/img/selfie-creamcoat.jpeg';
+
+const streams = [
+  {
+    name: 'Game design',
+    body: 'SMU Guildhall. How motivation works mechanically — open loops, curiosity gaps, progression, the difficulty curve nobody has to explain.',
+  },
+  {
+    name: 'Clinical training',
+    body: 'MA in Counseling, in practicum now. How people actually change, and what psychological safety requires before they will.',
+  },
+  {
+    name: 'Fifteen years shipping',
+    body: 'K-12 platforms at scale. How any of it reaches a real teacher on a Tuesday morning in October.',
+  },
+];
+
+const cases = [
+  {
+    index: '01',
+    href: '/work/experience-transformation',
+    title: 'The Experience Transformation',
+    claim:
+      'Two products shared one front door, and the most common search on the platform was empty. Rebuilt around teacher workflow, with an architecture that encodes how instruction sequences.',
+    proves: 'Shipped at scale',
+  },
+  {
+    index: '02',
+    title: 'Start Your Future',
+    claim:
+      'Teens are fluent in digital spaces and cannot see the path from that fluency to a career. The gap is not information — it is self-efficacy, so the intervention has to be built for confidence.',
+    proves: 'Theory into design',
+    status: 'Writing',
+  },
+  {
+    index: '03',
+    title: 'SEL Implementation Study',
+    claim:
+      'Whether social-emotional learning works is the wrong question. How faithfully it is implemented, and whether cultural responsiveness moderates it, is the answerable one.',
+    proves: 'Research method',
+    status: 'Writing',
+  },
+  {
+    index: '04',
+    title: 'The Designer Growth Framework',
+    claim:
+      'A design org had no structured way to see growth. The system built to fix it was adopted by HR and became the company instrument.',
+    proves: 'Organizational influence',
+    status: 'Writing',
+  },
+];
+
+const building = [
+  { name: 'Start Your Future', href: 'https://startyourfuture.org', note: 'Career exploration for teens' },
+  { name: 'Your Inner Constellation', href: 'https://www.your-inner-constellation.com', note: 'Traits made visible' },
+  { name: 'Palette', href: 'https://palette.heartandhues.com', note: 'A community for makers' },
+  { name: 'Meet My Therapist', href: 'https://www.meetmytherapist.com', note: 'Finding the right fit' },
+];
 ---
 
-<Layout title="Jessica Loredo">
-  <section class="hero">
-    <div class="hero-text">
-      <div class="hero-eyebrow">iam.jessicaloredo.com</div>
-      <h1 class="hero-name">Jessica<br /><em>Loredo</em></h1>
-      <p class="hero-thesis">I embrace complexity and thrive on making the internal external.</p>
-      <div class="hero-cta">
-        <a href="#doors" class="btn-primary">Find your way in</a>
-        <a href="#work" class="btn-ghost">See the work</a>
-      </div>
-    </div>
-    <div class="hero-photo-wrap">
-      <Image class="hero-photo" src={creamcoat} alt="Jessica Loredo" width={880} loading="eager" />
-    </div>
-  </section>
-
-  <section class="doors-section" id="doors">
-    <div class="section-label">find your way in</div>
-    <div class="doors">
-      <Door
-        href="/clinical"
-        photo={blondie}
-        alt="Jessica — clinical"
-        path="/clinical"
-        title="The clinician"
-      >
-        Trauma-informed care, counseling practice, and the path toward private practice. The room
-        where healing lives.
-      </Door>
-      <Door href="/design" photo={red} alt="Jessica — designer" path="/design" title="The designer">
-        15+ years of UX and product thinking. Systems made visible, experiences made human.
-      </Door>
-      <Door href="/work" photo={nymph} alt="Jessica — maker" path="/work" title="The maker">
-        Apps, paintings, illustrations, writing, games. The full range of making — in whatever
-        medium the work demands.
-      </Door>
+<Layout title="Jessica Loredo — Product Design Leader">
+  <section class="thesis-hero">
+    <p class="th-eyebrow" data-stage="1">Jessica Loredo · Product design leader</p>
+    <h1 class="th-claim" data-stage="2">
+      Engagement is a psychological&nbsp;condition before it is a product&nbsp;feature.
+    </h1>
+    <div class="th-support" data-stage="3">
+      <p>
+        I design learning products for the moment before someone decides to care. Fifteen years in
+        K-12 edtech, a counseling degree in progress, and a game designer's understanding of what
+        actually holds attention — pointed at the same problem.
+      </p>
+      <a href="#work" class="th-cta">See the work</a>
     </div>
   </section>
 
-  <section class="work-section" id="work">
-    <div class="work-inner">
-      <div class="section-label">selected work</div>
-      <div class="masonry">
-        <WorkCard
-          href="https://palette.heartandhues.com"
-          external
-          tag="Full-stack · Community"
-          title="Palette"
-          desc="A creative community platform for makers. Built from the inside out — Next.js, Redis, PostgreSQL, real-time collaboration."
-        >
-          <CardBanner from="#0d1a2a" to="#0f3d4a" color="rgba(79,195,200,0.7)" height={180} size={32}>
-            Palette
-          </CardBanner>
-        </WorkCard>
-
-        <WorkCard
-          href="#"
-          tag="App · Psychology"
-          title="Your Inner Constellation"
-          desc="A self-reflection tool mapping psychological traits into visual constellations. No diagnosis — just seeing yourself more clearly."
-        >
-          <CardBanner from="#1a1628" to="#2d1a3a" color="rgba(160,120,210,0.7)" height={140} italic>
-            Your Inner Constellation
-          </CardBanner>
-        </WorkCard>
-
-        <WorkCard
-          href="#"
-          tag="Art · Digital · Traditional"
-          title="Illustration & painting"
-          desc="Digital paintings, oils, watercolor, gouache, collage. The luminous dark made visible."
-        >
-          <Image
-            class="work-card-img art-preview"
-            src={frida}
-            alt="Illustration work"
-            width={800}
-            style="object-position: center 20%;"
-          />
-        </WorkCard>
-
-        <WorkCard
-          href="#"
-          tag="Writing · Games · Education"
-          title="Stories & games"
-          desc="Children's books, SEL content, game design. Making complex inner worlds accessible to young minds."
-        >
-          <CardBanner from="#1a2a1a" to="#0f3a2a" color="rgba(79,180,120,0.7)" height={120} size={22}>
-            SEL · Games · Stories
-          </CardBanner>
-        </WorkCard>
-      </div>
+  <section class="streams" data-reveal>
+    <div class="section-label">one claim, three kinds of evidence</div>
+    <div class="stream-grid">
+      {streams.map(({ name, body }) => (
+        <div class="stream">
+          <div class="stream-name">{name}</div>
+          <p class="stream-body">{body}</p>
+        </div>
+      ))}
     </div>
   </section>
 
-  <section class="about-strip" id="about">
-    <Image class="about-photo" src={peru} alt="Jessica in Peru" width={760} />
+  <section class="work-list" id="work" data-reveal>
+    <div class="section-label">selected work</div>
+    <div class="cases">
+      {cases.map((c) => <CaseCard {...c} />)}
+    </div>
+  </section>
+
+  <section class="building" data-reveal>
+    <div class="section-label">also building</div>
+    <p class="building-lede">
+      Independent products, designed and shipped end to end. Strategy is easier to claim than a
+      thing people can open.
+    </p>
+    <ul class="build-list">
+      {building.map(({ name, href, note }) => (
+        <li>
+          <a href={href} target="_blank" rel="noopener noreferrer">
+            <span class="bl-name">{name}</span>
+            <span class="bl-note">{note}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="about-strip" id="about" data-reveal>
+    <Image class="about-photo" src={portrait} alt="Jessica Loredo" width={760} />
     <div class="about-text">
       <p class="about-quote">"I am many things and I am also just, Jesi."</p>
       <p class="about-body">
-        I'm a product designer, clinical counseling intern, illustrator, painter, app developer, and
-        emerging author living in Kansas City. I thrive at the intersection of things that are
-        supposed to stay separate — the clinical and the creative, the technical and the expressive,
-        the interior and the visible.<br /><br />I'm working toward a private practice as a
-        trauma-informed clinician, building tools that externalize interior experience, and making
-        art in whatever medium the moment requires.
+        I'm a product design leader, clinical counseling intern, illustrator, and painter living in
+        Kansas City. I work at the intersection of things that are supposed to stay separate — the
+        clinical and the creative, the technical and the expressive, the interior and the
+        visible.<br /><br />I'm working toward a private practice as a trauma-informed clinician,
+        building tools that externalize interior experience, and making art in whatever medium the
+        moment requires.
       </p>
     </div>
   </section>
 </Layout>
+
+<style>
+  /* ---- thesis hero ---- */
+  .thesis-hero {
+    min-height: 88vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 160px 48px 96px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+  }
+
+  .th-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--teal);
+  }
+
+  .th-claim {
+    font-family: var(--serif);
+    font-size: clamp(40px, 7.2vw, 96px);
+    font-weight: 300;
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    max-width: 16ch;
+    text-wrap: balance;
+  }
+
+  .th-support {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 28px 56px;
+    padding-top: 8px;
+    border-top: 0.5px solid var(--ink-faint);
+  }
+
+  .th-support p {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    max-width: 52ch;
+    padding-top: 24px;
+  }
+
+  .th-cta {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--warm-white);
+    background: var(--ink);
+    padding: 14px 28px;
+    text-decoration: none;
+    transition: background 0.2s;
+    white-space: nowrap;
+  }
+
+  .th-cta:hover { background: var(--ink-soft); }
+  .th-cta:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+
+  /* ---- streams ---- */
+  .streams {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 72px 48px;
+  }
+
+  .stream-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 40px;
+  }
+
+  .stream-name {
+    font-family: var(--serif);
+    font-size: 21px;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+
+  .stream-body {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--ink-muted);
+  }
+
+  /* ---- work ---- */
+  .work-list {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 72px 48px;
+  }
+
+  .cases {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 0.5px solid var(--ink-faint);
+  }
+
+  /* ---- building ---- */
+  .building {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 72px 48px;
+  }
+
+  .building-lede {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    max-width: 54ch;
+    margin-bottom: 32px;
+  }
+
+  .build-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1px;
+    background: var(--ink-faint);
+    border: 0.5px solid var(--ink-faint);
+  }
+
+  .build-list a {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 22px 20px;
+    background: var(--warm-white);
+    text-decoration: none;
+    height: 100%;
+    transition: background 0.2s;
+  }
+
+  .build-list a:hover { background: var(--cream); }
+  .build-list a:focus-visible { outline: 2px solid var(--teal); outline-offset: -2px; }
+
+  .bl-name {
+    font-family: var(--serif);
+    font-size: 18px;
+    color: var(--ink);
+  }
+
+  .bl-note {
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    color: var(--ink-muted);
+  }
+
+  /* ---- soft load + reveal ---- */
+  [data-stage] {
+    opacity: 0;
+    transform: translateY(14px);
+    animation: rise 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  }
+
+  [data-stage='1'] { animation-delay: 0.05s; }
+  [data-stage='2'] { animation-delay: 0.2s; }
+  [data-stage='3'] { animation-delay: 0.45s; }
+
+  @keyframes rise {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Only hide reveal targets when JS is present to bring them back — otherwise
+     a failed script leaves the page blank below the hero. */
+  :global(html.js) [data-reveal] {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  :global(html.js) [data-reveal].shown {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-stage],
+    :global(html.js) [data-reveal] {
+      opacity: 1;
+      transform: none;
+      animation: none;
+      transition: none;
+    }
+  }
+
+  /* Printing never scrolls, so nothing would ever reveal itself. */
+  @media print {
+    [data-stage],
+    :global(html.js) [data-reveal] {
+      opacity: 1;
+      transform: none;
+      animation: none;
+      transition: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .thesis-hero { padding: 120px 24px 72px; min-height: 80vh; gap: 24px; }
+    .streams, .work-list, .building { padding: 56px 24px; }
+    .th-support { gap: 20px; }
+  }
+</style>
+
+<script>
+  const targets = document.querySelectorAll('[data-reveal]');
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (reduced || !('IntersectionObserver' in window)) {
+    targets.forEach((el) => el.classList.add('shown'));
+  } else {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('shown');
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: '0px 0px -12% 0px' }
+    );
+    targets.forEach((el) => io.observe(el));
+  }
+</script>

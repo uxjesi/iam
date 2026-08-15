@@ -35,6 +35,11 @@ const {
     />
   </head>
   <body>
+    <script is:inline>
+      // Marks JS as available so scroll-reveal styles only apply when something
+      // can actually undo them.
+      document.documentElement.classList.add('js');
+    </script>
     <Nav />
     <main>
       <slot />

@@ -1,0 +1,124 @@
+---
+interface Props {
+  href?: string;
+  index: string;
+  title: string;
+  claim: string;
+  proves: string;
+  status?: string;
+}
+
+const { href, index, title, claim, proves, status } = Astro.props;
+const Tag = href ? 'a' : 'div';
+---
+
+<Tag class:list={['case-card', { pending: !href }]} href={href}>
+  <span class="cc-index">{index}</span>
+  <span class="cc-title">{title}</span>
+  <p class="cc-claim">{claim}</p>
+  <span class="cc-proves">{proves}</span>
+  {href ? <span class="cc-arrow" aria-hidden="true">→</span> : <span class="cc-status">{status}</span>}
+</Tag>
+
+<style>
+  .case-card {
+    display: grid;
+    grid-template-columns: 54px minmax(0, 1fr);
+    grid-template-areas:
+      'index title'
+      '. claim'
+      '. proves';
+    gap: 6px 4px;
+    padding: 32px 0;
+    border-top: 0.5px solid var(--ink-faint);
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    transition: background 0.25s;
+  }
+
+  a.case-card:hover {
+    background: var(--cream);
+  }
+
+  a.case-card:focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 4px;
+  }
+
+  .cc-index {
+    grid-area: index;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--ink-faint);
+    padding-top: 9px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .cc-title {
+    grid-area: title;
+    font-family: var(--serif);
+    font-size: clamp(26px, 3.4vw, 38px);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--ink);
+  }
+
+  .cc-claim {
+    grid-area: claim;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    max-width: 58ch;
+    margin-top: 6px;
+  }
+
+  .cc-proves {
+    grid-area: proves;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-top: 12px;
+  }
+
+  .cc-arrow,
+  .cc-status {
+    position: absolute;
+    top: 36px;
+    right: 0;
+  }
+
+  .cc-arrow {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--ink-faint);
+    transition: color 0.25s, transform 0.25s;
+  }
+
+  a.case-card:hover .cc-arrow {
+    color: var(--teal);
+    transform: translateX(4px);
+  }
+
+  .cc-status {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  .pending .cc-title {
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 720px) {
+    .case-card {
+      grid-template-columns: 1fr;
+      grid-template-areas: 'index' 'title' 'claim' 'proves';
+      padding: 26px 0;
+    }
+    .cc-index { padding-top: 0; }
+    .cc-arrow, .cc-status { top: 26px; }
+  }
+</style>
