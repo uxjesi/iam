@@ -13,11 +13,11 @@ const facts = [
 ---
 
 <CaseStudy
-  title="I don't know where I am — Jessica Loredo"
+  title="I don't know where I am · Jessica Loredo"
   description="Rebuilding a K-12 learning platform around teacher workflow: product identity, information architecture, and a taxonomy that encodes how instruction sequences."
   eyebrow="Case study · Experience Transformation"
   headline="“I don’t know where I am”"
-  lede="Two products shared one front door — and the single most common search on the platform was no search at all."
+  lede="Two products shared one front door, and the single most common search on the platform was no search at all."
   facts={facts}
 >
 
@@ -27,14 +27,14 @@ const facts = [
       <h2>The most-run query was empty</h2>
       <p>
         Teachers logged in, landed on the home page, went straight to search, and pressed enter
-        without typing anything. Not occasionally — <strong>an empty query was the most common
+        without typing anything. Not occasionally. <strong>An empty query was the most common
         search on the platform.</strong> The second most common was &ldquo;magic school bus.&rdquo;
       </p>
       <p>
         An empty search isn't a search. It's someone looking for a place to stand. Teachers were
         using the search results page as a landing page, because the actual landing page hadn't
-        told them where they were or what they could do there. They skimmed past it — it wasn't
-        what they were looking for — and kept going until they hit a screen that at least showed
+        told them where they were or what they could do there. They skimmed past it, since it wasn't
+        what they were looking for, and kept going until they hit a screen that at least showed
         them the shape of the library.
       </p>
       <p>
@@ -64,12 +64,12 @@ const facts = [
       </p>
       <Figure
         caption="Before: the platform home and the Experience home had become the same page, with product tiles, curriculum packs, and tools competing for the same attention."
-        needs="Before-state screenshots — the old DE home page and the old Experience home side by side."
+        needs="Before-state screenshots: the old DE home page and the old Experience home side by side."
       />
       <p>
         Underneath the layout problem was a harder one. Ask a teacher what <em>Experience</em> was
         and they couldn't tell you. It was all just &ldquo;DE.&rdquo; The product had no identity
-        distinct from the platform it sat on — which meant it couldn't be described by sales,
+        distinct from the platform it sat on, which meant it couldn't be described by sales,
         couldn't be found by users, and couldn't be measured by anyone.
       </p>
       <p>The symptoms showed up everywhere at once:</p>
@@ -98,7 +98,7 @@ const facts = [
         </li>
         <li>
           <strong>The school calendar.</strong> Teacher habits are seasonal and releases are too.
-          You cannot rearrange a teacher's room in October — large-scale change has to land when
+          You cannot rearrange a teacher's room in October. Large-scale change has to land when
           they're able to absorb it.
         </li>
         <li>
@@ -123,8 +123,9 @@ const facts = [
     <div class="case-prose">
       <h2>The question we agreed to answer</h2>
       <p>
-        I ran a series of cross-functional workshops — design, product, engineering, curriculum,
-        analytics, marketing — to get to one problem statement everyone would actually sign up for.
+        I ran a series of cross-functional workshops across design, product, engineering,
+        curriculum, analytics, and marketing to get to one problem statement everyone would
+        actually sign up for.
         The output mattered less than the alignment: for the first time the teams had shared
         language for what we were solving.
       </p>
@@ -132,7 +133,7 @@ const facts = [
         How might we design an educator experience that makes finding the right content fast and
         intuitive, personalizes to each teacher's grade, subject, and region, simplifies navigation
         through a consistent interface, and communicates the product's role in the broader
-        ecosystem — all while respecting how little time teachers have?
+        ecosystem, all while respecting how little time teachers have?
       </PullQuote>
     </div>
   </section>
@@ -147,13 +148,13 @@ const facts = [
         at: <strong>Discover, Plan, Deliver, Reflect.</strong>
       </p>
       <p>
-        This gave us something we hadn't had — a test. When a debate started about whether some
+        This gave us something we hadn't had: a test. When a debate started about whether some
         capability belonged to Experience or to the platform, we could ask which stage of the
         teacher's work it served. Ownership arguments that had run for months became answerable in
         a meeting.
       </p>
       <Figure
-        caption="Information architecture v1.0 — the platform layer, the Experience workflow layered on top of it, and the four stages of teacher work below."
+        caption="Information architecture v1.0: the platform layer, the Experience workflow layered on top of it, and the four stages of teacher work below."
         needs="The IA v1.0 diagram (portfolio deck, p.12)."
         ratio="16 / 10"
       />
@@ -166,38 +167,38 @@ const facts = [
       <h2>Organizing by instructional purpose</h2>
       <p>
         The piece I'd defend hardest is the taxonomy. Content had been organized the way a library
-        is organized — by what a thing <em>is</em>. A video, an activity, a lesson, a quiz. But a
+        is organized, by what a thing <em>is</em>. A video, an activity, a lesson, a quiz. But a
         teacher planning tomorrow morning isn't looking for a video. They're looking for something
         to open with.
       </p>
       <p>So topics are banded by the job the content does in a lesson:</p>
       <ul>
-        <li><strong>Activate Thinking</strong> — get them in the door</li>
-        <li><strong>Build Knowledge</strong> — teach the thing</li>
-        <li><strong>Practice &amp; Review</strong> — make it stick</li>
-        <li><strong>Apply &amp; Extend</strong> — push it further</li>
+        <li><strong>Activate Thinking</strong>: get them in the door</li>
+        <li><strong>Build Knowledge</strong>: teach the thing</li>
+        <li><strong>Practice &amp; Review</strong>: make it stick</li>
+        <li><strong>Apply &amp; Extend</strong>: push it further</li>
       </ul>
       <p>
         Those bands are a teaching model, not navigation categories. The information architecture
         mirrors the sequence of instruction itself, which means a teacher scanning a topic page is
-        reading something already shaped like their lesson plan. Combined with a real hierarchy —
-        subject, then topic, then resource — a page could finally answer &ldquo;where am
+        reading something already shaped like their lesson plan. Combined with a real hierarchy of
+        subject, then topic, then resource, a page could finally answer &ldquo;where am
         I?&rdquo; without the teacher having to ask.
       </p>
       <p>
         The clearest way to see it is on a single topic. For a sixth-grade unit on force, the four
         bands line up as a car-collision video to open with, an explainer to teach from, an
-        interactive to practice against, and a student investigation to extend into — one complete
+        interactive to practice against, and a student investigation to extend into. One complete
         lesson arc, readable in a single row.
       </p>
       <LiveLink
         href="https://nuxt-experience-proto.vercel.app/"
         label="Experience home, prototyped"
-        note="Built in Nuxt to stress-test the model — personalization, the instructional-strategy bands, and continuity through Jump Back In."
+        note="Built in Nuxt to stress-test the model: personalization, the instructional-strategy bands, and continuity through Jump Back In."
       />
       <Figure
         caption="After: subject and topic hubs, with resources banded by instructional strategy rather than content type."
-        needs="Shipped screenshots — the Science subject hub, the Life Science topic hub, and a topic page showing the four instructional-strategy bands."
+        needs="Shipped screenshots: the Science subject hub, the Life Science topic hub, and a topic page showing the four instructional-strategy bands."
       />
     </div>
   </section>
@@ -232,7 +233,7 @@ const facts = [
       <p>
         Leadership had one non-negotiable: whatever we built had to be measurable. But
         &ldquo;engagement&rdquo; was being used to mean six different things depending on who was
-        talking, and the platform's existing proxy was completion — which measures compliance and
+        talking, and the platform's existing proxy was completion, which measures compliance and
         calls it learning.
       </p>
       <p>So I wrote the definition down, starting with what it isn't:</p>
@@ -241,16 +242,16 @@ const facts = [
         learning sometimes fails or succeeds when content quality is held constant.
       </PullQuote>
       <p>
-        From there, six component measures — engagement, progress, exploration, learning
-        expression, social experience, and social-emotional engagement — composing into a single
+        From there, six component measures (engagement, progress, exploration, learning
+        expression, social experience, and social-emotional engagement) composing into a single
         index. Exploration counts optional content and time in non-required material, because
         curiosity is a signal. Learning expression is reflection-driven: one thing I learned, one
         question I still have.
       </p>
       <p>
         The index answers one question: <strong>how deeply did students interact with
-        teacher-delivered learning experiences?</strong> Each persona gets their own version of it —
-        district leaders ask how embedded the product is in instruction, teachers ask whether
+        teacher-delivered learning experiences?</strong> Each persona gets their own version of it.
+        District leaders ask how embedded the product is in instruction, teachers ask whether
         students engaged with what they intended, students ask whether it was worth their time.
       </p>
       <Figure
@@ -268,12 +269,12 @@ const facts = [
       <p>
         The direction inherited from the prior third-party engagement was a starting point, not an
         answer. We went through three major design iterations before landing where the product is
-        now — each one stress-testing the model against real teacher workflows and against what
+        now. Each one stress-tested the model against real teacher workflows and against what
         engineering could actually deliver inside the release calendar.
       </p>
       <p>
         Rapid prototyping did most of the work of settling arguments. Rather than debating concepts
-        in the abstract, I built them — using AI tooling to get from idea to working prototype fast
+        in the abstract, I built them, using AI tooling to get from idea to working prototype fast
         enough that a concept could be argued about on a screen in the same week it was proposed.
         A bundling interaction let teachers collect resources while browsing instead of breaking
         flow to go somewhere else. Asset cards were reworked so a teacher can tell what they're
@@ -303,19 +304,19 @@ const facts = [
     <div class="case-prose">
       <h2>Outcome</h2>
       <p>
-        Experience and the platform now have separate homes, and Experience has a real one — a page
+        Experience and the platform now have separate homes, and Experience has a real one: a page
         built around what a teacher came to do rather than a directory of everything the company
         sells. Content sits in a clear hierarchy, banded by instructional purpose. Navigation was
         rebuilt against the four-stage model.
       </p>
       <p>
         <strong>Field feedback so far is that teachers are responding well to the new hierarchy and
-        taxonomy</strong> — the two things most directly aimed at &ldquo;I don't know where I
+        taxonomy</strong>, the two things most directly aimed at &ldquo;I don't know where I
         am.&rdquo;
       </p>
       <h3>Where it breaks, and why I expected it to</h3>
       <p>
-        Teachers are getting tripped up at the asset player — the page you land on when you
+        Teachers are getting tripped up at the asset player, the page you land on when you
         actually open a resource. It doesn't share the visual language or the navigation of the
         surfaces around it, so the orientation we rebuilt everywhere else drops away at the exact
         moment a teacher commits to a piece of content.
@@ -324,7 +325,7 @@ const facts = [
         I raised this as a risk during design, and it's where the friction is showing up now. It's
         also the clearest illustration of the constraint I started with: <strong>a product's
         identity can only be as coherent as the platform it sits inside.</strong> The player is a
-        shared surface. Fixing that seam isn't a design decision, it's a cross-team one — which
+        shared surface. Fixing that seam isn't a design decision, it's a cross-team one, which
         makes it an argument to keep making rather than a problem to solve alone.
       </p>
       <h3>Also still open</h3>
@@ -332,7 +333,7 @@ const facts = [
         The product's identity is still forming; one release doesn't undo years of being
         indistinguishable from the platform it runs on. The navigation is better than it was and
         looser than I want it, for the same shared-surface reason. And the work surfaced several
-        other areas that need attention — which is what happens when you can finally see a product
+        other areas that need attention, which is what happens when you can finally see a product
         clearly enough to evaluate it.
       </p>
       <p>

@@ -1,18 +1,75 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import PageIntro from '../../components/PageIntro.astro';
+import CaseCard from '../../components/CaseCard.astro';
+import { cases } from '../../data/cases.js';
 ---
 
 <Layout
-  title="Work — Jessica Loredo"
-  description="Apps, paintings, illustrations, writing, and games — the full range of making."
+  title="Work · Jessica Loredo"
+  description="Four case studies: a platform transformation, a career intervention for teens, an SEL implementation study, and a designer growth framework."
 >
-  <PageIntro
-    eyebrow="/work"
-    title="The maker"
-    lead="Apps, paintings, illustrations, writing, games. The full range of making — in whatever medium the work demands."
-  >
-    This page is being written. It will hold the full body of work — the apps, the paintings, the
-    books and games — each with room to breathe.
-  </PageIntro>
+  <section class="work-index">
+    <header class="wi-head">
+      <div class="wi-eyebrow">Selected work</div>
+      <h1 class="wi-title">Four pieces, one argument</h1>
+      <p class="wi-lede">
+        Each one proves something different: that the thinking ships, that theory can drive design
+        decisions, that the research holds up, and that a system can outlive the person who built
+        it.
+      </p>
+    </header>
+
+    <div class="wi-cases">
+      {cases.map((c) => <CaseCard {...c} />)}
+    </div>
+  </section>
 </Layout>
+
+<style>
+  .work-index {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 150px 48px 88px;
+  }
+
+  .wi-head {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 640px;
+    margin-bottom: 56px;
+  }
+
+  .wi-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--teal);
+  }
+
+  .wi-title {
+    font-family: var(--serif);
+    font-size: clamp(38px, 5.2vw, 62px);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  .wi-lede {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+  }
+
+  .wi-cases {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 0.5px solid var(--ink-faint);
+  }
+
+  @media (max-width: 768px) {
+    .work-index { padding: 116px 24px 72px; }
+    .wi-head { margin-bottom: 36px; }
+  }
+</style>

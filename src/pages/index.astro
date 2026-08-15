@@ -2,13 +2,14 @@
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import CaseCard from '../components/CaseCard.astro';
+import { cases } from '../data/cases.js';
 
 import portrait from '../assets/img/selfie-creamcoat.jpeg';
 
 const streams = [
   {
     name: 'Game design',
-    body: 'SMU Guildhall. How motivation works mechanically — open loops, curiosity gaps, progression, the difficulty curve nobody has to explain.',
+    body: 'SMU Guildhall. How motivation works mechanically: open loops, curiosity gaps, progression, the difficulty curve nobody has to explain.',
   },
   {
     name: 'Clinical training',
@@ -20,41 +21,6 @@ const streams = [
   },
 ];
 
-const cases = [
-  {
-    index: '01',
-    href: '/work/experience-transformation',
-    title: 'The Experience Transformation',
-    claim:
-      'Two products shared one front door, and the most common search on the platform was empty. Rebuilt around teacher workflow, with an architecture that encodes how instruction sequences.',
-    proves: 'Shipped at scale',
-  },
-  {
-    index: '02',
-    title: 'Start Your Future',
-    claim:
-      'Teens are fluent in digital spaces and cannot see the path from that fluency to a career. The gap is not information — it is self-efficacy, so the intervention has to be built for confidence.',
-    proves: 'Theory into design',
-    status: 'Writing',
-  },
-  {
-    index: '03',
-    title: 'SEL Implementation Study',
-    claim:
-      'Whether social-emotional learning works is the wrong question. How faithfully it is implemented, and whether cultural responsiveness moderates it, is the answerable one.',
-    proves: 'Research method',
-    status: 'Writing',
-  },
-  {
-    index: '04',
-    title: 'The Designer Growth Framework',
-    claim:
-      'A design org had no structured way to see growth. The system built to fix it was adopted by HR and became the company instrument.',
-    proves: 'Organizational influence',
-    status: 'Writing',
-  },
-];
-
 const building = [
   { name: 'Start Your Future', href: 'https://startyourfuture.org', note: 'Career exploration for teens' },
   { name: 'Your Inner Constellation', href: 'https://www.your-inner-constellation.com', note: 'Traits made visible' },
@@ -63,20 +29,38 @@ const building = [
 ];
 ---
 
-<Layout title="Jessica Loredo — Product Design Leader">
-  <section class="thesis-hero">
-    <p class="th-eyebrow" data-stage="1">Jessica Loredo · Product design leader</p>
-    <h1 class="th-claim" data-stage="2">
-      Engagement is a psychological&nbsp;condition before it is a product&nbsp;feature.
-    </h1>
-    <div class="th-support" data-stage="3">
-      <p>
-        I design learning products for the moment before someone decides to care. Fifteen years in
-        K-12 edtech, a counseling degree in progress, and a game designer's understanding of what
-        actually holds attention — pointed at the same problem.
+<Layout title="Jessica Loredo, Product Design Leader">
+  <section class="intro">
+    <div class="intro-head" data-stage="1">
+      <h1 class="intro-name">Jessica Loredo</h1>
+      <p class="intro-role">
+        Product Design Leader with 15+ years in EdTech, and a background in game design and
+        psychology.
       </p>
-      <a href="#work" class="th-cta">See the work</a>
     </div>
+
+    <div class="intro-argument" data-stage="2">
+      <p>
+        After fifteen years building for teachers and students, I've watched <em>engagement</em> get
+        thrown around like a magic bullet, as though naming it were the same as solving learning.
+        Badges, avatars, mini games. They can absolutely hold a student's attention. But does
+        holding attention guarantee learning? Does it make learning successful?
+      </p>
+      <p>
+        You can build an interface that's beautiful, accessible, and genuinely engaging, and still
+        have no idea whether the product works. The hard part was never the interface. It's
+        cultivating engagement over time, and being able to measure it once you have.
+      </p>
+    </div>
+
+    <div class="conclusion" data-stage="3">
+      <span class="conclusion-label">Which is where I start</span>
+      <p class="conclusion-line">
+        Engagement is a psychological condition before it is a product feature.
+      </p>
+    </div>
+
+    <a href="#work" class="intro-cta" data-stage="4">See the work</a>
   </section>
 
   <section class="streams" data-reveal>
@@ -122,7 +106,7 @@ const building = [
       <p class="about-quote">"I am many things and I am also just, Jesi."</p>
       <p class="about-body">
         I'm a product design leader, clinical counseling intern, illustrator, and painter living in
-        Kansas City. I work at the intersection of things that are supposed to stay separate — the
+        Kansas City. I work at the intersection of things that are supposed to stay separate: the
         clinical and the creative, the technical and the expressive, the interior and the
         visible.<br /><br />I'm working toward a private practice as a trauma-informed clinician,
         building tools that externalize interior experience, and making art in whatever medium the
@@ -133,54 +117,89 @@ const building = [
 </Layout>
 
 <style>
-  /* ---- thesis hero ---- */
-  .thesis-hero {
-    min-height: 88vh;
+  /* ---- intro ---- */
+  .intro {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 160px 48px 96px;
+    padding: 150px 48px 88px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 32px;
+    align-items: flex-start;
+    gap: 40px;
   }
 
-  .th-eyebrow {
-    font-size: 11px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--teal);
-  }
-
-  .th-claim {
-    font-family: var(--serif);
-    font-size: clamp(40px, 7.2vw, 96px);
-    font-weight: 300;
-    line-height: 1.02;
-    letter-spacing: -0.025em;
-    color: var(--ink);
-    max-width: 16ch;
-    text-wrap: balance;
-  }
-
-  .th-support {
+  .intro-head {
     display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    gap: 28px 56px;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .intro-name {
+    font-family: var(--serif);
+    font-size: clamp(38px, 5.2vw, 64px);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  .intro-role {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    max-width: 46ch;
+  }
+
+  .intro-argument {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 62ch;
     padding-top: 8px;
     border-top: 0.5px solid var(--ink-faint);
   }
 
-  .th-support p {
-    font-size: 16px;
-    line-height: 1.75;
+  .intro-argument p {
+    font-size: 17px;
+    line-height: 1.8;
     color: var(--ink-soft);
-    max-width: 52ch;
-    padding-top: 24px;
+    padding-top: 4px;
   }
 
-  .th-cta {
+  .intro-argument em {
+    font-style: italic;
+    color: var(--ink);
+  }
+
+  /* The claim reads as a conclusion the paragraphs above earn, so it's set
+     apart rather than set enormous. */
+  .conclusion {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    border-left: 2px solid var(--teal);
+    padding: 4px 0 4px 26px;
+    max-width: 640px;
+  }
+
+  .conclusion-label {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--teal);
+  }
+
+  .conclusion-line {
+    font-family: var(--serif);
+    font-size: clamp(25px, 3.4vw, 40px);
+    font-weight: 300;
+    line-height: 1.22;
+    letter-spacing: -0.012em;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+
+  .intro-cta {
     font-size: 12px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -192,8 +211,8 @@ const building = [
     white-space: nowrap;
   }
 
-  .th-cta:hover { background: var(--ink-soft); }
-  .th-cta:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+  .intro-cta:hover { background: var(--ink-soft); }
+  .intro-cta:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
 
   /* ---- streams ---- */
   .streams {
@@ -294,13 +313,14 @@ const building = [
   [data-stage='1'] { animation-delay: 0.05s; }
   [data-stage='2'] { animation-delay: 0.2s; }
   [data-stage='3'] { animation-delay: 0.45s; }
+  [data-stage='4'] { animation-delay: 0.65s; }
 
   @keyframes rise {
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* Only hide reveal targets when JS is present to bring them back — otherwise
-     a failed script leaves the page blank below the hero. */
+  /* Only hide reveal targets when JS is present to bring them back. Otherwise
+     a failed script leaves the page blank below the intro. */
   :global(html.js) [data-reveal] {
     opacity: 0;
     transform: translateY(18px);
@@ -334,9 +354,9 @@ const building = [
   }
 
   @media (max-width: 768px) {
-    .thesis-hero { padding: 120px 24px 72px; min-height: 80vh; gap: 24px; }
+    .intro { padding: 116px 24px 72px; gap: 32px; }
     .streams, .work-list, .building { padding: 56px 24px; }
-    .th-support { gap: 20px; }
+    .conclusion { max-width: none; padding-left: 20px; }
   }
 </style>
 
