@@ -1,0 +1,77 @@
+---
+interface Props {
+  caption: string;
+  /** What image belongs here. Shown in the placeholder until an asset is dropped in. */
+  needs?: string;
+  ratio?: string;
+}
+
+const { caption, needs, ratio = '16 / 9' } = Astro.props;
+---
+
+<figure class="case-figure">
+  <div class="figure-frame" style={{ aspectRatio: ratio }}>
+    <slot>
+      <div class="figure-placeholder">
+        <span class="ph-label">Image</span>
+        {needs && <span class="ph-needs">{needs}</span>}
+      </div>
+    </slot>
+  </div>
+  <figcaption>{caption}</figcaption>
+</figure>
+
+<style>
+  .case-figure {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 6px 0;
+  }
+
+  .figure-frame {
+    width: 100%;
+    background: var(--cream);
+    border: 0.5px solid var(--ink-faint);
+    overflow: hidden;
+  }
+
+  .figure-frame :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .figure-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 24px;
+    text-align: center;
+  }
+
+  .ph-label {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--teal);
+  }
+
+  .ph-needs {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+    max-width: 44ch;
+  }
+
+  figcaption {
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+  }
+</style>
