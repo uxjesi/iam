@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "iam",
+  "compatibility_date": "2026-08-15",
+  // No "main" script: this is a static site, so the Worker serves files only.
+  "assets": {
+    "directory": "./dist",
+    // Unmatched routes get dist/404.html with a real 404 status.
+    "not_found_handling": "404-page"
+  }
+}
