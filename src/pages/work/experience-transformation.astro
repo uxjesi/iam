@@ -1,0 +1,345 @@
+---
+import CaseStudy from '../../layouts/CaseStudy.astro';
+import Figure from '../../components/Figure.astro';
+import PullQuote from '../../components/PullQuote.astro';
+import LiveLink from '../../components/LiveLink.astro';
+
+const facts = [
+  { label: 'Role', value: 'Product Design Lead' },
+  { label: 'Org', value: 'Discovery Education' },
+  { label: 'Product', value: 'Experience' },
+  { label: 'Partners', value: 'Product · Engineering · Curriculum · Analytics · Marketing' },
+];
+---
+
+<CaseStudy
+  title="I don't know where I am — Jessica Loredo"
+  description="Rebuilding a K-12 learning platform around teacher workflow: product identity, information architecture, and a taxonomy that encodes how instruction sequences."
+  eyebrow="Case study · Experience Transformation"
+  headline="“I don’t know where I am”"
+  lede="Two products shared one front door — and the single most common search on the platform was no search at all."
+  facts={facts}
+>
+
+  <section class="case-section">
+    <div class="section-label">the finding</div>
+    <div class="case-prose">
+      <h2>The most-run query was empty</h2>
+      <p>
+        Teachers logged in, landed on the home page, went straight to search, and pressed enter
+        without typing anything. Not occasionally — <strong>an empty query was the most common
+        search on the platform.</strong> The second most common was &ldquo;magic school bus.&rdquo;
+      </p>
+      <p>
+        An empty search isn't a search. It's someone looking for a place to stand. Teachers were
+        using the search results page as a landing page, because the actual landing page hadn't
+        told them where they were or what they could do there. They skimmed past it — it wasn't
+        what they were looking for — and kept going until they hit a screen that at least showed
+        them the shape of the library.
+      </p>
+      <p>
+        That reading matched what teachers said out loud. Across interviews and field feedback, one
+        complaint came back more than any other.
+      </p>
+      <PullQuote attribution="the most consistent piece of user feedback we had">
+        I don't know where I am.
+      </PullQuote>
+      <p>
+        Behavioral data and stated frustration were describing the same failure from two
+        directions. That framing is what made the problem tractable: this wasn't a search-relevance
+        problem or a content problem. It was an orientation problem.
+      </p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-label">the problem</div>
+    <div class="case-prose">
+      <h2>Two products, one front door</h2>
+      <p>
+        The platform home and the Experience home had converged into effectively the same surface.
+        Curriculum packs, tools, subject entry points, and product tiles all competed on one page,
+        and nothing on it answered the question a teacher actually arrives with: <em>what do I do
+        next?</em>
+      </p>
+      <Figure
+        caption="Before: the platform home and the Experience home had become the same page, with product tiles, curriculum packs, and tools competing for the same attention."
+        needs="Before-state screenshots — the old DE home page and the old Experience home side by side."
+      />
+      <p>
+        Underneath the layout problem was a harder one. Ask a teacher what <em>Experience</em> was
+        and they couldn't tell you. It was all just &ldquo;DE.&rdquo; The product had no identity
+        distinct from the platform it sat on — which meant it couldn't be described by sales,
+        couldn't be found by users, and couldn't be measured by anyone.
+      </p>
+      <p>The symptoms showed up everywhere at once:</p>
+      <ul>
+        <li>Teachers couldn't find content matched to their grade, subject, and teaching context</li>
+        <li>&ldquo;I didn't know we had that feature&rdquo; was a routine response in research</li>
+        <li>No clear answer to what came next after finding a resource</li>
+        <li>Sales couldn't tell a coherent story about where the product fit</li>
+        <li>Internally, nobody agreed on the boundary between Experience and the platform</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-label">constraints</div>
+    <div class="case-prose">
+      <h2>What made it hard</h2>
+      <p>
+        This was a live product with a decade of habit built on top of it, mid-migration between
+        design systems, owned by no single team.
+      </p>
+      <ul>
+        <li>
+          <strong>Legacy and new coexisting.</strong> The product was a mix of legacy platform
+          pages and newer design system pages, so any change had to work in both worlds at once.
+        </li>
+        <li>
+          <strong>The school calendar.</strong> Teacher habits are seasonal and releases are too.
+          You cannot rearrange a teacher's room in October — large-scale change has to land when
+          they're able to absorb it.
+        </li>
+        <li>
+          <strong>Identity was a shared decision.</strong> Experience's identity couldn't be
+          defined without the platform's identity being defined alongside it, and that sat with a
+          different team.
+        </li>
+        <li>
+          <strong>Inherited work.</strong> A prior third-party UX engagement had already produced
+          direction. My job started with continuing and translating that work rather than
+          restarting it.
+        </li>
+        <li>
+          <strong>Moving org.</strong> Team and ownership changes ran through the whole effort.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-label">framing</div>
+    <div class="case-prose">
+      <h2>The question we agreed to answer</h2>
+      <p>
+        I ran a series of cross-functional workshops — design, product, engineering, curriculum,
+        analytics, marketing — to get to one problem statement everyone would actually sign up for.
+        The output mattered less than the alignment: for the first time the teams had shared
+        language for what we were solving.
+      </p>
+      <PullQuote>
+        How might we design an educator experience that makes finding the right content fast and
+        intuitive, personalizes to each teacher's grade, subject, and region, simplifies navigation
+        through a consistent interface, and communicates the product's role in the broader
+        ecosystem — all while respecting how little time teachers have?
+      </PullQuote>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-label">the model</div>
+    <div class="case-prose">
+      <h2>A model of the work, not a map of the org</h2>
+      <p>
+        Products drift toward mirroring the company that builds them. The fix was to anchor the
+        architecture in what teachers do instead, and to name it in four stages we could all point
+        at: <strong>Discover, Plan, Deliver, Reflect.</strong>
+      </p>
+      <p>
+        This gave us something we hadn't had — a test. When a debate started about whether some
+        capability belonged to Experience or to the platform, we could ask which stage of the
+        teacher's work it served. Ownership arguments that had run for months became answerable in
+        a meeting.
+      </p>
+      <Figure
+        caption="Information architecture v1.0 — the platform layer, the Experience workflow layered on top of it, and the four stages of teacher work below."
+        needs="The IA v1.0 diagram (portfolio deck, p.12)."
+        ratio="16 / 10"
+      />
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-label">taxonomy</div>
+    <div class="case-prose">
+      <h2>Organizing by instructional purpose</h2>
+      <p>
+        The piece I'd defend hardest is the taxonomy. Content had been organized the way a library
+        is organized — by what a thing <em>is</em>. A video, an activity, a lesson, a quiz. But a
+        teacher planning tomorrow morning isn't looking for a video. They're looking for something
+        to open with.
+      </p>
+      <p>So topics are banded by the job the content does in a lesson:</p>
+      <ul>
+        <li><strong>Activate Thinking</strong> — get them in the door</li>
+        <li><strong>Build Knowledge</strong> — teach the thing</li>
+        <li><strong>Practice &amp; Review</strong> — make it stick</li>
+        <li><strong>Apply &amp; Extend</strong> — push it further</li>
+      </ul>
+      <p>
+        Those bands are a teaching model, not navigation categories. The information architecture
+        mirrors the sequence of instruction itself, which means a teacher scanning a topic page is
+        reading something already shaped like their lesson plan. Combined with a real hierarchy —
+        subject, then topic, then resource — a page could finally answer &ldquo;where am
+        I?&rdquo; without the teacher having to ask.
+      </p>
+      <p>
+        The clearest way to see it is on a single topic. For a sixth-grade unit on force, the four
+        bands line up as a car-collision video to open with, an explainer to teach from, an
+        interactive to practice against, and a student investigation to extend into — one complete
+        lesson arc, readable in a single row.
+      </p>
+      <LiveLink
+        href="https://nuxt-experience-proto.vercel.app/"
+        label="Experience home, prototyped"
+        note="Built in Nuxt to stress-test the model — personalization, the instructional-strategy bands, and continuity through Jump Back In."
+      />
+      <Figure
+        caption="After: subject and topic hubs, with resources banded by instructional strategy rather than content type."
+        needs="Shipped screenshots — the Science subject hub, the Life Science topic hub, and a topic page showing the four instructional-strategy bands."
+      />
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-label">the loop</div>
+    <div class="case-prose">
+      <h2>Closing the loop between teachers and students</h2>
+      <p>
+        A workflow product that stops at &ldquo;assigned&rdquo; is only half a product. I mapped
+        both sides as one system: the teacher's Discover → Plan → Deliver → Reflect running above,
+        the student's Orient → Engage → Reflect running below, and a return path where what
+        students actually did with an assignment feeds back into the teacher's next planning cycle.
+      </p>
+      <p>
+        That return path is the argument. It's what makes the teacher's reflect stage real instead
+        of decorative, it's what makes impact visible to district leaders, and it demonstrates that
+        the product is designed as a whole rather than a set of fragments.
+      </p>
+      <Figure
+        caption="The two-lane ecosystem map: teacher and student journeys with the engagement data return path."
+        needs="The teacher/student journey map (CoTeach ecosystem diagram)."
+        ratio="16 / 9"
+      />
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-label">measurement</div>
+    <div class="case-prose">
+      <h2>Defining a word everyone used and nobody had defined</h2>
+      <p>
+        Leadership had one non-negotiable: whatever we built had to be measurable. But
+        &ldquo;engagement&rdquo; was being used to mean six different things depending on who was
+        talking, and the platform's existing proxy was completion — which measures compliance and
+        calls it learning.
+      </p>
+      <p>So I wrote the definition down, starting with what it isn't:</p>
+      <PullQuote>
+        We are not saying engagement is learning. We are saying engagement helps answer <em>why</em>
+        learning sometimes fails or succeeds when content quality is held constant.
+      </PullQuote>
+      <p>
+        From there, six component measures — engagement, progress, exploration, learning
+        expression, social experience, and social-emotional engagement — composing into a single
+        index. Exploration counts optional content and time in non-required material, because
+        curiosity is a signal. Learning expression is reflection-driven: one thing I learned, one
+        question I still have.
+      </p>
+      <p>
+        The index answers one question: <strong>how deeply did students interact with
+        teacher-delivered learning experiences?</strong> Each persona gets their own version of it —
+        district leaders ask how embedded the product is in instruction, teachers ask whether
+        students engaged with what they intended, students ask whether it was worth their time.
+      </p>
+      <Figure
+        caption="The six component scores and how they compose into a single index."
+        needs="The measurement framework diagram (portfolio deck, p.15)."
+        ratio="16 / 9"
+      />
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-label">iteration</div>
+    <div class="case-prose">
+      <h2>Three passes to get here</h2>
+      <p>
+        The direction inherited from the prior third-party engagement was a starting point, not an
+        answer. We went through three major design iterations before landing where the product is
+        now — each one stress-testing the model against real teacher workflows and against what
+        engineering could actually deliver inside the release calendar.
+      </p>
+      <p>
+        Rapid prototyping did most of the work of settling arguments. Rather than debating concepts
+        in the abstract, I built them — using AI tooling to get from idea to working prototype fast
+        enough that a concept could be argued about on a screen in the same week it was proposed.
+        A bundling interaction let teachers collect resources while browsing instead of breaking
+        flow to go somewhere else. Asset cards were reworked so a teacher can tell what they're
+        looking at in under two seconds.
+      </p>
+      <p>
+        Being able to hand a team something clickable changed the shape of the conversation.
+        Objections that would have taken a month of meetings to surface arrived in an afternoon,
+        which is the entire point.
+      </p>
+      <Figure
+        caption="Rapid prototypes used to stress-test the resource bundling concept and the asset card hierarchy."
+        needs="Prototype screenshots (portfolio deck, p.18)."
+        ratio="16 / 10"
+      />
+      <p>
+        Within two to three weeks of the first workshop, the effect was less about artifacts than
+        about momentum: engineering, product, analytics, curriculum, design, marketing, and
+        leadership working from one mental model, decisions moving faster, and the harder
+        conversations about risk and tradeoffs finally happening in the open.
+      </p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-label">where it landed</div>
+    <div class="case-prose">
+      <h2>Outcome</h2>
+      <p>
+        Experience and the platform now have separate homes, and Experience has a real one — a page
+        built around what a teacher came to do rather than a directory of everything the company
+        sells. Content sits in a clear hierarchy, banded by instructional purpose. Navigation was
+        rebuilt against the four-stage model.
+      </p>
+      <p>
+        <strong>Field feedback so far is that teachers are responding well to the new hierarchy and
+        taxonomy</strong> — the two things most directly aimed at &ldquo;I don't know where I
+        am.&rdquo;
+      </p>
+      <h3>Where it breaks, and why I expected it to</h3>
+      <p>
+        Teachers are getting tripped up at the asset player — the page you land on when you
+        actually open a resource. It doesn't share the visual language or the navigation of the
+        surfaces around it, so the orientation we rebuilt everywhere else drops away at the exact
+        moment a teacher commits to a piece of content.
+      </p>
+      <p>
+        I raised this as a risk during design, and it's where the friction is showing up now. It's
+        also the clearest illustration of the constraint I started with: <strong>a product's
+        identity can only be as coherent as the platform it sits inside.</strong> The player is a
+        shared surface. Fixing that seam isn't a design decision, it's a cross-team one — which
+        makes it an argument to keep making rather than a problem to solve alone.
+      </p>
+      <h3>Also still open</h3>
+      <p>
+        The product's identity is still forming; one release doesn't undo years of being
+        indistinguishable from the platform it runs on. The navigation is better than it was and
+        looser than I want it, for the same shared-surface reason. And the work surfaced several
+        other areas that need attention — which is what happens when you can finally see a product
+        clearly enough to evaluate it.
+      </p>
+      <p>
+        The next argument is the student side, where the same thinking hasn't been applied yet.
+        That's <a href="/work">a separate piece of work</a>.
+      </p>
+    </div>
+  </section>
+
+</CaseStudy>
