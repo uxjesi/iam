@@ -113,13 +113,11 @@ const building = [
     <div class="about-text">
       <p class="about-quote">"I am many things and I am also just, Jesi."</p>
       <p class="about-body">
-        I'm a product design leader, clinical counseling intern, illustrator, and painter living in
-        Kansas City. I work at the intersection of things that are supposed to stay separate: the
-        clinical and the creative, the technical and the expressive, the interior and the
-        visible.<br /><br />I'm working toward a private practice as a trauma-informed clinician,
-        building tools that externalize interior experience, and making art in whatever medium the
-        moment requires.
+        I'm a product design leader with fifteen years in K-12 edtech, and I'm most of the way
+        through a master's in counseling. That second thing wasn't a career change. It was where the
+        first one kept pointing.
       </p>
+      <a class="about-more" href="/about">More about how I work</a>
     </div>
   </section>
 </Layout>
@@ -298,6 +296,22 @@ const building = [
 
   .build-list a:hover { background: var(--cream); }
   .build-list a:focus-visible { outline: 2px solid var(--teal); outline-offset: -2px; }
+
+  .about-more {
+    display: inline-block;
+    margin-top: 22px;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 0.5px solid var(--ink-faint);
+    padding-bottom: 4px;
+    transition: border-color 0.2s;
+  }
+
+  .about-more:hover { border-color: var(--teal); }
+  .about-more:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
 
   .bl-name {
     font-family: var(--serif);
