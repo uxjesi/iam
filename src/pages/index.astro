@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import CaseCard from '../components/CaseCard.astro';
 import { cases } from '../data/cases.js';
 
-import portrait from '../assets/img/selfie-creamcoat.jpeg';
+import portrait from '../assets/img/selfie-blondie.JPG';
 
 const streams = [
   {
@@ -16,8 +16,8 @@ const streams = [
     body: 'MA in Counseling, in practicum now. How people actually change, and what psychological safety requires before they will.',
   },
   {
-    name: 'Fifteen years shipping',
-    body: 'K-12 platforms at scale. How any of it reaches a real teacher on a Tuesday morning in October.',
+    name: 'A decade in K-12',
+    body: 'Learning platforms at scale. How any of it reaches a real teacher on a Tuesday morning in October.',
   },
 ];
 
@@ -34,37 +34,47 @@ const building = [
     <div class="intro-head" data-stage="1">
       <h1 class="intro-name">Jessica Loredo</h1>
       <p class="intro-role">
-        Product Design Leader with 15+ years in EdTech, and a background in game design and
-        psychology.
+        Product Design Leader. 15+ years in product design, over a decade of it in EdTech, with a
+        background in game design and psychology.
       </p>
     </div>
 
     <div class="intro-argument" data-stage="2">
       <p>
-        After fifteen years building for teachers and students, I've watched <em>engagement</em> get
-        thrown around like a magic bullet, as though naming it were the same as solving learning.
-        Badges, avatars, mini games. They can absolutely hold a student's attention. But does
-        holding attention guarantee learning? Does it make learning successful?
+        After over a decade building for teachers and students, I've watched the word <em>engagement</em>
+        get thrown around like a magic bullet. Product leaders sounded like they were on board with
+        defining what it meant, and then routinely skipped past asking the right questions.
       </p>
-      <p>
-        You can build an interface that's beautiful, accessible, and genuinely engaging, and still
-        have no idea whether the product works. The hard part was never the interface. It's
-        cultivating engagement over time, and being able to measure it once you have.
-      </p>
-      <p>
-        And underneath that sits the misconception I think most of edtech is built on. Engagement
-        doesn't start at login. It doesn't even start when a student walks into the classroom. They
-        arrive already carrying something: what happened at home that morning, whether they decided
-        years ago that they're bad at math, whether this is a room where being wrong is survivable.
-        A product meets a student somewhere in the middle of all that. Most are designed as though
-        they meet them at zero.
-      </p>
+
+      <details class="intro-more">
+        <summary>
+          <span class="more-open">Read more</span>
+          <span class="more-close">Read less</span>
+        </summary>
+        <div class="intro-more-body">
+          <p>
+            The quickest path to calling yourself an engaging student experience is to add badges,
+            avatars, and mini games, and that can absolutely hold a student's attention. But does
+            holding attention guarantee learning? Does it make the learning effective? Can you
+            measure it?
+          </p>
+          <p>
+            Underneath the desire to capture a student's attention is a misconception. Engagement
+            doesn't start at login. It doesn't even start when a student walks into a classroom,
+            because they arrive already carrying something that may get in the way: what happened at
+            home that morning, whether they decided years ago that they're bad at math, whether this
+            is a room where being wrong is okay. A product meets a student somewhere in the middle
+            of all that, and most of the time it isn't on the product's radar at all. It is very
+            much on the educator's.
+          </p>
+          <p>So that's where I start too.</p>
+        </div>
+      </details>
     </div>
 
     <div class="conclusion" data-stage="3">
-      <span class="conclusion-label">Which is where I start</span>
       <p class="conclusion-line">
-        Engagement is a psychological condition before it is a product feature.
+        Engagement is a psychological state before it's a product feature.
       </p>
     </div>
 
@@ -113,9 +123,9 @@ const building = [
     <div class="about-text">
       <p class="about-quote">"I am many things and I am also just, Jesi."</p>
       <p class="about-body">
-        I'm a product design leader with fifteen years in K-12 edtech, and I'm most of the way
-        through a master's in counseling. That second thing wasn't a career change. It was where the
-        first one kept pointing.
+        Fifteen years in product design, over a decade of it in K-12 edtech, and I'm most of the
+        way through a master's in counseling. That second thing wasn't a career change. It was
+        where the first one kept pointing.
       </p>
       <a class="about-more" href="/about">More about how I work</a>
     </div>
@@ -188,13 +198,6 @@ const building = [
     max-width: 640px;
   }
 
-  .conclusion-label {
-    font-size: 10px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--teal);
-  }
-
   .conclusion-line {
     font-family: var(--serif);
     font-size: clamp(25px, 3.4vw, 40px);
@@ -203,6 +206,56 @@ const building = [
     letter-spacing: -0.012em;
     color: var(--ink);
     text-wrap: balance;
+  }
+
+  /* Disclosure keeps the landing short without hiding anything from a reader
+     who has JS off: <details> works natively. */
+  .intro-more {
+    margin-top: 4px;
+  }
+
+  .intro-more summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    list-style: none;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
+    padding: 4px 0;
+    width: fit-content;
+  }
+
+  .intro-more summary::-webkit-details-marker { display: none; }
+
+  .intro-more summary::after {
+    content: '';
+    width: 22px;
+    height: 0.5px;
+    background: var(--teal);
+    transition: width 0.25s ease;
+  }
+
+  .intro-more summary:hover::after { width: 34px; }
+  .intro-more summary:focus-visible { outline: 2px solid var(--teal); outline-offset: 4px; }
+
+  .more-close { display: none; }
+  .intro-more[open] .more-open { display: none; }
+  .intro-more[open] .more-close { display: inline; }
+
+  .intro-more-body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 20px;
+  }
+
+  .intro-more-body p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--ink-soft);
   }
 
   .intro-cta {
