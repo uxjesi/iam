@@ -1,0 +1,167 @@
+---
+import CaseStudy from '../../layouts/CaseStudy.astro';
+import Figure from '../../components/Figure.astro';
+import PullQuote from '../../components/PullQuote.astro';
+import LiveLink from '../../components/LiveLink.astro';
+
+const facts = [
+  { label: 'Role', value: 'Product Designer' },
+  { label: 'Org', value: 'Edmentum' },
+  { label: 'Product', value: 'Exact Path' },
+  { label: 'Designed', value: 'Around 2014, in about a month' },
+  { label: 'Status', value: 'Still in production' },
+];
+---
+
+<CaseStudy
+  title="A month of design, ten years in production · Jessica Loredo"
+  description="Designing the K-2 and 3-5 student experiences for an adaptive learning product that did not exist yet, using game design to survive a repetitive curriculum structure."
+  eyebrow="Case study · Exact Path"
+  headline="A month of design, ten years in production"
+  lede="I designed the student experience for a product that didn't exist yet. It's still shipping, essentially unchanged, and I don't think that's entirely a compliment."
+  facts={facts}
+>
+
+  <section class="case-section">
+    <div class="section-label">the setup</div>
+    <div class="case-prose">
+      <h2>One month, K through 12</h2>
+      <p>
+        Edmentum wanted to fill a gap in its product line with an individualized adaptive learning
+        platform. Nothing existed yet. It needed student experiences across K-12, plus educator and
+        administrator views, and the majority of the design had about a month.
+      </p>
+      <p>
+        The obvious move under that kind of deadline is one interface for everybody. I argued
+        against it and won, which is the decision the rest of this case study rests on.
+      </p>
+      <PullQuote>
+        A first grader and an eighth grader are not the same user, and no amount of schedule
+        pressure makes them one.
+      </PullQuote>
+      <p>
+        We scoped to two bands and built them properly: 3-5 first, then K-2. I flagged at the time
+        that kindergarten had needs distinct enough to eventually deserve its own treatment, which
+        is still true.
+      </p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-label">the constraint</div>
+    <div class="case-prose">
+      <h2>The curriculum framework was the problem</h2>
+      <p>
+        For the learning path to adapt, students had to move linearly: a set of lessons, then
+        quizzes, then a final assessment, then either a rerun of the material or a new set. Sound in
+        theory. In practice it's a loop, and loops get old fast when you're seven.
+      </p>
+      <p>
+        I couldn't change the curriculum framework. It was the constraint, not the brief. So the
+        question became: <strong>how do you make a structurally repetitive experience feel worth
+        continuing?</strong>
+      </p>
+      <p>
+        Which is a solved problem, just not in education. Players spend hundreds of hours grinding
+        in MMOs, doing tasks that are repetitive by design, because the surrounding structure gives
+        the repetition somewhere to go. I have a master's in game design, and this is the project
+        where that stopped being a line on my résumé.
+      </p>
+      <Figure
+        caption="Early wireframes and concepts for a more gamified approach to the K-2 learning path."
+        needs="Early wireframe and concept images from the K-2 case study."
+        ratio="16 / 10"
+      />
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-label">research</div>
+    <div class="case-prose">
+      <h2>Testing with five-year-olds</h2>
+      <p>
+        I ran competitive analysis across the early-learner category and found the same pattern
+        everywhere: screens packed with activities, characters, and color, all competing for a
+        child's attention at once. More stimulus treated as more engagement.
+      </p>
+      <p>
+        Then I ran usability testing with actual K-2 students, on tablets and laptops. The clearest
+        finding was physical. Children that age have developing dexterity, and on tablets it showed
+        up as haphazard tapping with mixed success. On laptops, with simple tactile buttons, the
+        same children succeeded far more often. Engagement problems at that age are frequently motor
+        problems wearing a costume.
+      </p>
+      <Figure
+        caption="Usability testing with K-2 students across tablet and laptop, comparing tap accuracy against tactile interaction."
+        needs="Stills or clips from the K-2 usability testing sessions."
+      />
+      <p>
+        The second finding mattered more, and it's the one that connects to everything I've worked
+        on since. When young students get stuck, they don't problem-solve. They turn around and ask
+        the teacher. So a confusing student interface doesn't stay a student problem. It converts,
+        directly and immediately, into demand on a teacher's attention during a lesson.
+      </p>
+      <p>
+        Designing for the classroom means never adding time to a teacher's day. A student experience
+        that fails quietly is not failing quietly at all.
+      </p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-label">outcome</div>
+    <div class="case-prose">
+      <h2>Still there</h2>
+      <p>
+        Exact Path shipped and became Edmentum's flagship. It's still marketed as their primary K-12
+        personalized learning product, and the student experience I designed is still recognizably
+        the one running today.
+      </p>
+      <p>The product has continued to be recognized well past the point I stopped touching it:</p>
+      <ul>
+        <li>SIIA CODiE Award for Best Learning Capacity Building Solution, 2020</li>
+        <li>EdTech Awards, Best Adaptive Technology Solution, 2023</li>
+        <li>EdTech Cool Tool winner plus three finalist categories, 2024</li>
+        <li>Tech &amp; Learning Back to School Award, 2024</li>
+        <li>EdTech Breakthrough Award, 2025</li>
+      </ul>
+      <LiveLink
+        href="https://www.edmentum.com/products/exact-path/"
+        label="Exact Path, today"
+        note="Still Edmentum's flagship adaptive learning product. The student experience underneath it is the one designed in that month."
+      />
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-label">the honest part</div>
+    <div class="case-prose">
+      <h2>Ten years is a long time not to look</h2>
+      <p>
+        I'm proud of how much of it held. Designing something in a month that survives a decade of
+        platform changes and roadmap cycles means the underlying model was right, and I'd defend the
+        grade-band decision again tomorrow.
+      </p>
+      <p>
+        But a student experience going ten years without a serious revisit isn't a testament to my
+        design. It's a fact about where student experience sits on the priority list. In that same
+        decade the industry shipped an enormous amount of teacher tooling, admin reporting, and
+        analytics. The screen the child actually looks at tends to get built once and then inherited.
+      </p>
+      <p>
+        This is the thing I've spent the years since arguing about, and it's why the argument isn't
+        abstract for me. I built one of the examples.
+      </p>
+      <h3>What I'd change</h3>
+      <p>
+        Kindergarten still deserves its own experience, and I said so at the time. The gamified
+        layer solved the repetition problem at the surface without addressing the pattern that
+        caused it, which was the right call under that deadline and the wrong one to leave in place
+        for a decade. And I had no way to measure whether any of it was working beyond completion
+        rates, which is the gap that eventually turned into an
+        <a href="/work/experience-transformation">engagement measurement framework</a> years later.
+      </p>
+    </div>
+  </section>
+
+</CaseStudy>
