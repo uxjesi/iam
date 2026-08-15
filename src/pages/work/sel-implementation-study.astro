@@ -1,0 +1,122 @@
+---
+import CaseStudy from '../../layouts/CaseStudy.astro';
+import Figure from '../../components/Figure.astro';
+import PullQuote from '../../components/PullQuote.astro';
+
+const facts = [
+  { label: 'Role', value: 'Researcher' },
+  { label: 'Context', value: 'Graduate research, UMKC' },
+  { label: 'Design', value: 'Quantitative, causal-comparative' },
+  { label: 'Analysis', value: 'Moderated multiple regression' },
+  { label: 'Status', value: 'Proposal' },
+];
+---
+
+<CaseStudy
+  title="Asking a question that can actually be answered · Jessica Loredo"
+  description="A quantitative study design examining whether SEL implementation fidelity predicts student competency, and whether culturally responsive teaching moderates the relationship."
+  eyebrow="Case study · SEL implementation research"
+  headline="Asking a question that can actually be answered"
+  lede="Whether social-emotional learning works is the wrong question. Whether it was implemented as designed, and for whom it works better, are questions with answers."
+  facts={facts}
+>
+
+  <section class="case-section">
+    <div class="section-label">the framing</div>
+    <div class="case-prose">
+      <h2>"Does SEL work" is unanswerable</h2>
+      <p>
+        Districts adopt social-emotional learning programs and then ask whether they worked. The
+        question sounds reasonable and cannot be answered, because two schools running the same
+        program are frequently not running the same program at all. One implements it as designed.
+        The other runs it in the ten minutes before dismissal when there's time.
+      </p>
+      <p>
+        So the outcome data comes back mixed, and the conclusion drawn is that the program is
+        ineffective, when what actually varied was implementation.
+      </p>
+      <PullQuote>
+        Implementation fidelity is not a footnote in the methods section. It is frequently the
+        entire finding.
+      </PullQuote>
+      <p>
+        The second thing usually missing is any account of context. A program built on one set of
+        cultural assumptions, delivered to students it wasn't designed around, by educators with
+        varying confidence in culturally responsive practice, is not one intervention. It's several.
+      </p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-label">the question</div>
+    <div class="case-prose">
+      <h2>The design</h2>
+      <p>
+        The study asks whether SEL implementation fidelity predicts student social-emotional
+        competency, and whether educators' culturally responsive teaching self-efficacy moderates
+        that relationship. The moderation is the interesting part: not just whether fidelity matters,
+        but whether it matters <em>more</em> in some classrooms than others.
+      </p>
+      <p>All three constructs are measured with validated instruments rather than invented ones:</p>
+      <ul>
+        <li><strong>Implementation fidelity</strong>, against the CASEL framework</li>
+        <li><strong>Culturally responsive teaching self-efficacy</strong>, via the CRTSE scale</li>
+        <li><strong>Student social-emotional competency</strong>, via the SECQ</li>
+      </ul>
+      <p>
+        Analysis is moderated multiple regression. The design is causal-comparative, which is a
+        deliberate tradeoff rather than a shortcut: it works with schools as they already are,
+        without the assignment control a quasi-experimental design would need, and in exchange it
+        gives up the ability to make causal claims. I'd rather name that cost than obscure it.
+      </p>
+      <Figure
+        caption="The conceptual model: implementation fidelity predicting student competency, with culturally responsive teaching self-efficacy as moderator."
+        needs="The moderated regression conceptual model diagram from the proposal."
+        ratio="16 / 9"
+      />
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-label">positionality</div>
+    <div class="case-prose">
+      <h2>Who is asking</h2>
+      <p>
+        The proposal includes a positionality statement, and I'd keep it in any version of this work
+        that goes anywhere. I'm a first-generation Mexican American researcher studying whether
+        culturally responsive practice changes what a program does for students. That is not
+        incidental to the question I chose, the moderator I selected, or what I'll notice in the
+        results.
+      </p>
+      <p>
+        Naming it isn't a disclaimer. It's part of the method, and leaving it out would make the
+        study less rigorous rather than more neutral.
+      </p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-label">why it's here</div>
+    <div class="case-prose">
+      <h2>What this has to do with design</h2>
+      <p>
+        This sits in a product design portfolio on purpose. Most design work claims to be
+        evidence-based and means that someone read some articles. Being able to specify constructs,
+        select validated instruments, choose an analysis, name a design tradeoff and its cost, and
+        write an honest limitations section is a different skill, and it's the one that makes the
+        rest of my work checkable.
+      </p>
+      <p>
+        It's also directly upstream of everything else on this site. The
+        <a href="/work/experience-transformation">engagement measurement framework</a> exists
+        because I'd already had to think hard about what a construct is, how you'd operationalize
+        it, and what a proxy measure quietly costs you. "Mark as complete" is a fidelity problem
+        wearing a product-metrics costume.
+      </p>
+      <p>
+        This is a proposal, not a completed study. It has not been run.
+      </p>
+    </div>
+  </section>
+
+</CaseStudy>

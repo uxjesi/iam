@@ -18,26 +18,26 @@ export const cases = [
   },
   {
     index: '03',
+    href: '/work/start-your-future',
     title: 'Start Your Future',
     claim:
       'Teens are fluent in digital spaces and cannot see the path from that fluency to a career. The gap is not information. It is self-efficacy, so the intervention has to be built for confidence.',
     proves: 'Theory into design',
-    status: 'Writing',
   },
   {
     index: '04',
+    href: '/work/sel-implementation-study',
     title: 'SEL Implementation Study',
     claim:
       'Whether social-emotional learning works is the wrong question. How faithfully it is implemented, and whether cultural responsiveness moderates it, is the answerable one.',
     proves: 'Research method',
-    status: 'Writing',
   },
   {
     index: '05',
+    href: '/work/growth-framework',
     title: 'The Designer Growth Framework',
     claim:
       'A design org had no structured way to see growth. The system built to fix it was adopted by HR and became the company instrument.',
     proves: 'Organizational influence',
-    status: 'Writing',
   },
 ];

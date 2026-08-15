@@ -1,0 +1,220 @@
+---
+import CaseStudy from '../../layouts/CaseStudy.astro';
+import Figure from '../../components/Figure.astro';
+import PullQuote from '../../components/PullQuote.astro';
+import LiveLink from '../../components/LiveLink.astro';
+
+const facts = [
+  { label: 'Role', value: 'Program design, research, build' },
+  { label: 'Context', value: 'Graduate coursework, UMKC' },
+  { label: 'Population', value: 'High school students, KCPS' },
+  { label: 'Grounding', value: 'SCCT, Krumboltz, Super' },
+  { label: 'Status', value: 'Built and live' },
+];
+---
+
+<CaseStudy
+  title="The gap isn't information · Jessica Loredo"
+  description="A career intervention for teenagers grounded in Social Cognitive Career Theory, designed around self-efficacy rather than information, and built end to end."
+  eyebrow="Case study · Start Your Future"
+  headline="The gap isn't information"
+  lede="Teenagers live inside digital tools all day and still can't see a path from that to a career. More information was never going to fix it."
+  facts={facts}
+>
+
+  <section class="case-section">
+    <div class="section-label">the problem</div>
+    <div class="case-prose">
+      <h2>Fluency is not the same as a path</h2>
+      <p>
+        Students spend hours in gaming, streaming, social platforms, and content creation. That
+        fluency is real. What almost none of them have is any sense of how it connects to work that
+        exists, or how a person like them would get there.
+      </p>
+      <p>
+        The standard response is to give them more information. Career sites, interest inventories,
+        lists of jobs with median salaries. That treats the gap as informational, and I don't think
+        it is. A student who has never seen someone from their school do a thing does not lack a
+        description of the thing. They lack any reason to believe it applies to them.
+      </p>
+      <PullQuote>
+        The gap isn't information. It's self-efficacy, which means the intervention has to be built
+        for confidence rather than for browsing.
+      </PullQuote>
+      <p>
+        The second half of the problem is on the adult side. Educators are expected to guide
+        students toward emerging tech pathways, and research consistently finds they feel
+        underprepared to do it. That's not a knowledge gap you can close with a resource library
+        either.
+      </p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-label">research</div>
+    <div class="case-prose">
+      <h2>One school, in detail</h2>
+      <p>
+        I interviewed a digital learning specialist at Paseo Academy, a Kansas City Public Schools
+        arts high school of roughly 670 students and 60 teachers, who runs their digital media
+        program and their esports team. The esports program is certified through the Missouri
+        Scholastic Esports Federation, and it exposes students to real roles: game design,
+        broadcasting, production, IT networking, coaching.
+      </p>
+      <p>What came out of that conversation reframed the design:</p>
+      <ul>
+        <li>
+          Only a small share of students reach these opportunities, and the limiting factor is
+          <strong>teacher confidence, not student appetite.</strong> Educators were unsure when or
+          how to use emerging tools, so exposure depended on which adult a student happened to get.
+        </li>
+        <li>
+          There was no consistent way to assess students' digital career interests at all. Career
+          exploration happened when an individual teacher decided to run something.
+        </li>
+        <li>
+          The result is uneven by design. Two students in the same building get completely different
+          exposure based on staffing.
+        </li>
+      </ul>
+      <p>
+        That finding is what produced the two-sided structure. A student-only product would have
+        been rationed by exactly the constraint the research surfaced.
+      </p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-label">the design</div>
+    <div class="case-prose">
+      <h2>Two halves, one intervention</h2>
+      <h3>Teacher Toolkit</h3>
+      <p>
+        Short, low-preparation activities that let an educator introduce digital career concepts
+        without needing technical expertise first: lesson starters, discussion prompts, career
+        videos, reflection tools, activity cards. The goal is not to train teachers. It's to lower
+        the confidence threshold enough that the conversation happens at all.
+      </p>
+      <h3>Student Journeys</h3>
+      <p>
+        Students pick a character guide and travel a career path with them, exploring
+        interest-based content, identifying the skills involved, and reflecting on how their own
+        strengths connect. Each completed journey earns a badge. Finishing all six earns a printed
+        certificate.
+      </p>
+      <Figure
+        caption="The six student journeys, character guides, and the badge and certificate system."
+        needs="Screens from startyourfuture.org: journey selection, a character guide, a badge, the certificate."
+        ratio="16 / 10"
+      />
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-label">the method</div>
+    <div class="case-prose">
+      <h2>Where each design decision came from</h2>
+      <p>
+        Every element above traces to a specific mechanism in career development theory. This is the
+        part I'd want anyone evaluating my work to read, because it's the difference between
+        research as decoration and research doing the deciding.
+      </p>
+      <div class="case-table-wrap">
+        <table class="case-table">
+          <thead>
+            <tr>
+              <th>Theory</th>
+              <th>Mechanism</th>
+              <th>What it produced</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>SCCT</td>
+              <td>Self-efficacy is built through mastery experiences, not persuasion</td>
+              <td>Journeys broken into small, completable steps so a student accumulates evidence of their own capability</td>
+            </tr>
+            <tr>
+              <td>SCCT</td>
+              <td>Vicarious learning: seeing someone like you do the thing</td>
+              <td>Character guides who travel the path alongside the student instead of a neutral catalog of roles</td>
+            </tr>
+            <tr>
+              <td>SCCT</td>
+              <td>Outcome expectations strengthen with recognition and encouragement</td>
+              <td>Badges per journey, a certificate at six, and toolkit prompts that put a teacher in the encouraging role</td>
+            </tr>
+            <tr>
+              <td>Krumboltz</td>
+              <td>Happenstance: curiosity and experimentation matter more than planning</td>
+              <td>Exploration that doesn't require knowing what you want first, and no wrong entry point</td>
+            </tr>
+            <tr>
+              <td>Super</td>
+              <td>Self-concept develops across life roles and stages</td>
+              <td>Reflective prompts asking students to connect interests and values to a forming identity, not to pick a job</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Read down the middle column and the program is basically re-derivable. That's the test I
+        hold my own work to now: if you removed the theory, would the design still be the same? Here
+        it wouldn't be.
+      </p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-label">evaluation</div>
+    <div class="case-prose">
+      <h2>How I'd know if it worked</h2>
+      <p>
+        Pre and post assessment on both sides. Teachers on comfort with digital career content,
+        familiarity with pathways, and confidence supporting exploration. Students on awareness of
+        digital careers, understanding of their own strengths, and confidence connecting the two.
+        Qualitative reflections from both. Longer term, follow-up on whether participation in CTE
+        and technology programs shifts at all.
+      </p>
+      <p>
+        Note what's being measured: confidence, not knowledge. If the theory of change is
+        self-efficacy, a knowledge test would tell you nothing about whether the intervention did
+        its job.
+      </p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-label">honestly</div>
+    <div class="case-prose">
+      <h2>What this is and isn't</h2>
+      <p>
+        This was graduate coursework, and it remains conceptual. The activities and pathways have
+        not been reviewed by educators or curriculum specialists beyond that one interview, and it
+        has never been run with students. I said so in the paper and I'll say it here.
+      </p>
+      <p>
+        What went past the assignment is that I built it. The paper called for a proposal, and
+        proposals are easy to write and impossible to evaluate. So there's a working site instead.
+      </p>
+      <LiveLink
+        href="https://startyourfuture.org"
+        kicker="Live site"
+        label="startyourfuture.org"
+        note="The program as built. Teacher toolkit, six student journeys, character guides, badges."
+      />
+      <p>
+        Two adults, unprompted, each spent close to an hour in it. That is not an efficacy result
+        and I'm not presenting it as one. But they were adults with no assignment, no teacher, and
+        no badge that meant anything to them, and the journeys held them anyway. Given the whole
+        design is about sustaining attention without extrinsic pressure, it's the one signal I have
+        and I'll take it.
+      </p>
+      <p>
+        The paper was co-authored for the course. The program design, the build, and the site are
+        mine.
+      </p>
+    </div>
+  </section>
+
+</CaseStudy>

@@ -3,13 +3,14 @@ interface Props {
   href: string;
   label: string;
   note: string;
+  kicker?: string;
 }
 
-const { href, label, note } = Astro.props;
+const { href, label, note, kicker = 'Live prototype' } = Astro.props;
 ---
 
 <a class="live-link" href={href} target="_blank" rel="noopener noreferrer">
-  <span class="ll-kicker">Live prototype</span>
+  <span class="ll-kicker">{kicker}</span>
   <span class="ll-label">{label}</span>
   <span class="ll-note">{note}</span>
   <span class="ll-arrow" aria-hidden="true">→</span>

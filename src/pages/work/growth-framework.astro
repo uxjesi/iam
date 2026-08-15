@@ -1,0 +1,193 @@
+---
+import CaseStudy from '../../layouts/CaseStudy.astro';
+import Figure from '../../components/Figure.astro';
+import PullQuote from '../../components/PullQuote.astro';
+
+const facts = [
+  { label: 'Role', value: 'Design and facilitation' },
+  { label: 'Org', value: 'Discovery Education' },
+  { label: 'Started', value: 'March 2025' },
+  { label: 'Outcome', value: 'Adopted beyond design' },
+];
+---
+
+<CaseStudy
+  title="A system that outlived its author · Jessica Loredo"
+  description="A competency framework and self-assessment worksheet for designers that HR borrowed to build their own, now used in reviews, goal setting, and promotion discussions."
+  eyebrow="Case study · Designer growth framework"
+  headline="A system that outlived its author"
+  lede="Designers had no way to see their own growth except through a manager's opinion of it. So I built the instrument, and then HR built theirs from mine."
+  facts={facts}
+>
+
+  <section class="case-section">
+    <div class="section-label">the problem</div>
+    <div class="case-prose">
+      <h2>Growth measured by vibes</h2>
+      <p>
+        Before this existed, a designer at Discovery Education had no structured way to assess their
+        own skill level. Career conversations ran on qualitative feedback and whatever their manager
+        happened to notice. HR had goal-setting initiatives, but they were general enough that they
+        couldn't measure design skill progression at all.
+      </p>
+      <p>
+        Managers had the mirror-image problem. Asked to guide someone's professional development
+        beyond "ship the roadmap" or "be more senior," they had nothing concrete to point at. And
+        because HR had no design-specific framework, advancement decisions rested on impressions,
+        which is exactly the condition under which advancement stops being equitable.
+      </p>
+      <PullQuote>
+        If nobody can describe what better looks like, then better is whatever the person in the
+        room says it is.
+      </PullQuote>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-label">the approach</div>
+    <div class="case-prose">
+      <h2>Starting from someone else's work</h2>
+      <p>
+        I didn't invent a competency model from nothing. There was a well-regarded public framework
+        for design teams already, and starting there meant the arguments could be about what was
+        missing rather than about whether a framework was needed.
+      </p>
+      <p>Two things were missing for how our team actually worked:</p>
+      <ul>
+        <li>
+          <strong>Influence.</strong> The soft skills and leadership behaviors that determine whether
+          a designer's work lands on a cross-functional product team. This was inspired by an
+          unfinished framework from a former manager, which deserves the credit.
+        </li>
+        <li>
+          <strong>Analysis.</strong> Synthesizing research and information into a point of view,
+          which is arguably the core designer skill and was nowhere in the original.
+        </li>
+      </ul>
+      <p>
+        The original was also rigid, which was the third gap. A researcher and a visual systems
+        specialist should not be measured on an identical column set, so the model needed to flex
+        by specialization.
+      </p>
+      <p>
+        I socialized it with managers and senior designers first, then introduced it in a Design Jam,
+        then took it deeper in the K-12 team meeting. The questions that came back were mostly about
+        seniority mapping and how it would reconcile with corporate HR systems, which told me
+        something important: people were treating it as real before it was official.
+      </p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-label">the insight</div>
+    <div class="case-prose">
+      <h2>A document nobody touches is a document nobody uses</h2>
+      <p>
+        Reading through it, I could see the gap. It was a reference table. Designers were already
+        asking how to track themselves against it, and my read was that they'd want to interact with
+        the framework rather than consult it. A static rubric gets looked at once.
+      </p>
+      <p>
+        So I designed a worksheet set: self-assessment, structured space to cite real examples of
+        your own work as evidence, and manager feedback in the same artifact. Then radial
+        visualizations, so a designer could see the shape of their skills instead of reading a grid.
+        The picture is what makes it land. You can see your own asymmetry immediately.
+      </p>
+      <Figure
+        caption="The competency matrix, the radial skill visualizations, and the self-assessment worksheets."
+        needs="Growth framework artifacts: the skills matrix, radial charts in light and dark, and worksheet examples."
+        ratio="16 / 10"
+      />
+      <p>
+        This is the same conviction that runs through everything else on this site. Engagement is
+        not a nice-to-have on top of a system. It's the difference between a system that gets used
+        and one that gets archived.
+      </p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-label">iteration</div>
+    <div class="case-prose">
+      <h2>Three passes</h2>
+      <p>
+        <strong>First</strong>, the framework itself: refining the wording at every category and
+        competency intersection to match how our design org actually talked, then piloting it with a
+        small group of designers during quarterly reviews.
+      </p>
+      <p>
+        <strong>Second</strong>, usability. The radial charts and the worksheets came out of this
+        round, along with a dark mode, plus layout and structure fixes that came directly from
+        watching people try to fill them in.
+      </p>
+      <p>
+        <strong>Third</strong>, specialization, which is still in progress. The goal is swappable
+        competencies so a research-focused designer can trade aesthetic criteria for deeper research
+        ones without leaving the framework.
+      </p>
+      <p>
+        The most useful feedback came from use, not from review. People agreed with the framework in
+        the abstract and only discovered what was ambiguous when they had to score themselves
+        against it.
+      </p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-label">outcome</div>
+    <div class="case-prose">
+      <h2>It left the design team</h2>
+      <p>
+        <strong>HR borrowed elements of this framework to build their own.</strong> A tool made for
+        one design org became the basis for how the company thought about growth more broadly. I had
+        no authority over HR and no mandate to influence them. The framework did that on its own,
+        because it was more concrete than what existed.
+      </p>
+      <p>It's in active use for:</p>
+      <ul>
+        <li>Performance reviews</li>
+        <li>Goal setting and career development planning</li>
+        <li>Promotion discussions</li>
+      </ul>
+      <p>
+        The outcome I think about most, though, is a single case. A designer on our team
+        participating in an on-the-job training program for professionals on a work visa needed
+        formal documentation of her skills and development plan. There was no standardized way to
+        produce that. The framework became it.
+      </p>
+      <PullQuote>
+        A competency rubric is an abstraction until the day it's the only document that can show
+        what someone is capable of.
+      </PullQuote>
+      <p>
+        Designers also changed their plans because of it. One realized they wanted to grow in
+        strategic thinking and set a goal against it. Others found their self-assessment didn't
+        match the criteria they'd assumed they met, and adjusted toward things they'd been
+        overlooking. That gap between self-perception and definition is the whole point.
+      </p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-label">still open</div>
+    <div class="case-prose">
+      <h2>What isn't finished</h2>
+      <p>
+        Formal validation with HR so it can carry weight in promotion decisions is still in
+        progress. That's the difference between a tool people find useful and one that functions as
+        objective evidence, which is what would make advancement genuinely more transparent.
+      </p>
+      <p>
+        Specialization tracks aren't built. Wording still needs refinement, and the bi-annual team
+        and culture survey now includes questions on career pathing so the framework keeps getting
+        revised against what people actually report.
+      </p>
+      <p>
+        The thing I'd tell anyone building one of these: we approached it like a design problem,
+        prototype and test and refine, and that was right. But no amount of review surfaced what
+        real usage surfaced in a week.
+      </p>
+    </div>
+  </section>
+
+</CaseStudy>
