@@ -1,0 +1,82 @@
+---
+interface Props {
+  href: string;
+  label: string;
+  note: string;
+}
+
+const { href, label, note } = Astro.props;
+---
+
+<a class="live-link" href={href} target="_blank" rel="noopener noreferrer">
+  <span class="ll-kicker">Live prototype</span>
+  <span class="ll-label">{label}</span>
+  <span class="ll-note">{note}</span>
+  <span class="ll-arrow" aria-hidden="true">→</span>
+</a>
+
+<style>
+  .live-link {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      'kicker arrow'
+      'label arrow'
+      'note arrow';
+    gap: 4px 20px;
+    align-items: center;
+    padding: 22px 24px;
+    border: 0.5px solid var(--ink-faint);
+    background: var(--cream);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s;
+    margin: 6px 0;
+  }
+
+  .live-link:hover,
+  .live-link:focus-visible {
+    border-color: var(--teal);
+  }
+
+  .live-link:focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 3px;
+  }
+
+  .ll-kicker {
+    grid-area: kicker;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--teal);
+  }
+
+  .ll-label {
+    grid-area: label;
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.2;
+    color: var(--ink);
+  }
+
+  .ll-note {
+    grid-area: note;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+  }
+
+  .ll-arrow {
+    grid-area: arrow;
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--ink-faint);
+    transition: color 0.2s, transform 0.2s;
+  }
+
+  .live-link:hover .ll-arrow {
+    color: var(--teal);
+    transform: translateX(4px);
+  }
+</style>

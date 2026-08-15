@@ -2,6 +2,7 @@
 import CaseStudy from '../../layouts/CaseStudy.astro';
 import Figure from '../../components/Figure.astro';
 import PullQuote from '../../components/PullQuote.astro';
+import LiveLink from '../../components/LiveLink.astro';
 
 const facts = [
   { label: 'Role', value: 'Product Design Lead' },
@@ -183,6 +184,17 @@ const facts = [
         subject, then topic, then resource — a page could finally answer &ldquo;where am
         I?&rdquo; without the teacher having to ask.
       </p>
+      <p>
+        The clearest way to see it is on a single topic. For a sixth-grade unit on force, the four
+        bands line up as a car-collision video to open with, an explainer to teach from, an
+        interactive to practice against, and a student investigation to extend into — one complete
+        lesson arc, readable in a single row.
+      </p>
+      <LiveLink
+        href="https://nuxt-experience-proto.vercel.app/"
+        label="Experience home, prototyped"
+        note="Built in Nuxt to stress-test the model — personalization, the instructional-strategy bands, and continuity through Jump Back In."
+      />
       <Figure
         caption="After: subject and topic hubs, with resources banded by instructional strategy rather than content type."
         needs="Shipped screenshots — the Science subject hub, the Life Science topic hub, and a topic page showing the four instructional-strategy bands."
@@ -261,10 +273,16 @@ const facts = [
       </p>
       <p>
         Rapid prototyping did most of the work of settling arguments. Rather than debating concepts
-        in the abstract, I built prototypes to make them concrete — including a bundling
-        interaction that let teachers collect resources while browsing instead of breaking their
-        flow to go somewhere else, and asset cards reworked so a teacher can tell what they're
+        in the abstract, I built them — using AI tooling to get from idea to working prototype fast
+        enough that a concept could be argued about on a screen in the same week it was proposed.
+        A bundling interaction let teachers collect resources while browsing instead of breaking
+        flow to go somewhere else. Asset cards were reworked so a teacher can tell what they're
         looking at in under two seconds.
+      </p>
+      <p>
+        Being able to hand a team something clickable changed the shape of the conversation.
+        Objections that would have taken a month of meetings to surface arrived in an afternoon,
+        which is the entire point.
       </p>
       <Figure
         caption="Rapid prototypes used to stress-test the resource bundling concept and the asset card hierarchy."
