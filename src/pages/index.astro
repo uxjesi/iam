@@ -5,6 +5,7 @@ import CaseCard from '../components/CaseCard.astro';
 import { cases } from '../data/cases.js';
 
 import portrait from '../assets/img/selfie-blondie.JPG';
+import aboutPortrait from '../assets/img/selfie-creamcoat.jpeg';
 
 const streams = [
   {
@@ -31,6 +32,7 @@ const building = [
 
 <Layout title="Jessica Loredo, Product Design Leader">
   <section class="intro">
+    <div class="intro-main">
     <div class="intro-head" data-stage="1">
       <h1 class="intro-name">Jessica Loredo</h1>
       <p class="intro-role">
@@ -78,6 +80,11 @@ const building = [
     </div>
 
     <a href="#work" class="intro-cta" data-stage="4">See the work</a>
+    </div>
+
+    <div class="intro-portrait" data-stage="1">
+      <Image src={portrait} alt="Jessica Loredo" width={720} />
+    </div>
   </section>
 
   <section class="streams" data-reveal>
@@ -118,7 +125,7 @@ const building = [
   </section>
 
   <section class="about-strip" id="about" data-reveal>
-    <Image class="about-photo" src={portrait} alt="Jessica Loredo" width={760} />
+    <Image class="about-photo" src={aboutPortrait} alt="Jessica Loredo" width={760} />
     <div class="about-text">
       <p class="about-quote">"I am many things and I am also just, Jesi."</p>
       <p class="about-body">
@@ -137,10 +144,27 @@ const building = [
     max-width: 1200px;
     margin: 0 auto;
     padding: 150px 48px 88px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 72px;
+    align-items: start;
+  }
+
+  .intro-main {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 40px;
+    min-width: 0;
+  }
+
+  .intro-portrait :global(img) {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
   }
 
   .intro-head {
@@ -428,7 +452,13 @@ const building = [
   }
 
   @media (max-width: 768px) {
-    .intro { padding: 116px 24px 72px; gap: 32px; }
+    .intro {
+      padding: 116px 24px 72px;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .intro-main { gap: 32px; }
+    .intro-portrait { order: -1; max-width: 200px; }
     .streams, .work-list, .building { padding: 56px 24px; }
     .conclusion { max-width: none; padding-left: 20px; }
   }
