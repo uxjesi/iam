@@ -1,18 +1,17 @@
 ---
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
-import portrait from '../assets/img/selfie-creamcoat.jpeg';
+import portrait from '../assets/img/selfie-peru.jpeg';
 ---
 
 <Layout
   title="About · Jessica Loredo"
-  description="A product design leader with fifteen years in product design and over a decade in K-12 edtech, most of the way through a counseling degree."
+  description="Designer, painter, counseling intern, and game design graduate living in Kansas City."
 >
   <section class="about">
     <header class="ab-head">
       <div class="ab-eyebrow">About</div>
-      <h1 class="ab-title">A decade of designing learning products led me to a counseling degree</h1>
-      <p class="ab-lede">That was not a career change. It was where the first thing kept pointing.</p>
+      <h1 class="ab-title">I am many things and I am also just, Jesi</h1>
     </header>
 
     <div class="ab-grid">
@@ -23,56 +22,50 @@ import portrait from '../assets/img/selfie-creamcoat.jpeg';
 
       <div class="ab-prose">
         <p>
-          I'm a product design leader with fifteen years in product design, over a decade of it in
-          K-12 edtech, and I'm most of the way through a master's in counseling. I spent those years building products meant to help kids
-          learn, and kept hitting the same wall: you can ship something well-researched,
-          well-designed, and genuinely engaging, and still have no idea whether it reached anyone.
-          The question of why kept leading somewhere product design doesn't go on its own, so I went
-          and studied it.
+          I've been making things on the internet since I was in high school, which is longer than I
+          usually admit out loud. That turned into fifteen years of product design, most of it in
+          K-12, and somewhere in the middle of it a master's in game design from SMU Guildhall.
+        </p>
+        <p>
+          I'm now most of the way through a master's in counseling. People tend to read that as a
+          swerve. It has never felt like one. I spent years building things meant to help kids learn
+          and kept arriving at questions product design doesn't answer on its own, so I went and
+          studied the field that does.
         </p>
 
-        <h2>How I work</h2>
+        <h2>How my brain works</h2>
         <p>
           I'm autistic and ADHD. In practice that means I read systems quickly and I'm pulled toward
           the parts everyone else routes around. When something is vague, I go in and stay there
-          until it has a shape. Most of what's on this site started that way: an ownership question
-          nobody could answer, a word every team used and no one had defined, a growth framework
-          that didn't exist until it did.
+          until it has a shape.
         </p>
         <p>
-          I work in a rhythm. Some days go deep, some stay light, and the deep ones are where the
-          real work happens. That's partly how my brain runs and partly a conviction about the
-          craft. We have tools that make us faster than we have ever been, which makes it more
-          important, not less, to spend real time making sure we're building the right thing.
+          It also means I work in a rhythm rather than at a constant rate. Some days go deep, some
+          stay light, and the deep ones are where the real work happens. I've stopped apologising
+          for that, partly because it's how I'm built and partly because I think it's right. We have
+          tools that make us faster than we have ever been, which makes it more important, not less,
+          to spend real time making sure we're building the right thing.
         </p>
         <p class="ab-pull">Speed is not the same as direction.</p>
-        <p>
-          Human-centered design only works if somebody is still doing the part where you go find out
-          about the human. So the environments where I do my best work are flexible ones, with room
-          for discovery and research and respect for the process. Give me that and an undefined
-          problem, and I'll come back with something the whole team can point at.
-        </p>
 
-        <h2>What I'm after</h2>
+        <h2>The rest of it</h2>
         <p>
-          I'm as good at solving something quickly as I am at sitting with it, and I've spent a long
-          time being paid for the first one. What I want now is the second: strategy, systems, and
-          work that changes how learning feels rather than how a feature behaves. That doesn't have
-          to live on a screen. Some of the best interventions for how kids learn, and for how they
-          feel while they're doing it, are programs and structures and rituals rather than products.
+          I paint and illustrate. Oils, watercolour, gouache, digital, collage, whatever the piece
+          seems to want. I write. I build small products on nights and weekends because making
+          something is the fastest way for me to understand it, and because it's fun, which is a
+          sufficient reason on its own.
         </p>
         <p>
-          I've led teams, and I care about the people on them getting better at their work. The
-          growth framework on this site exists because I wanted the designers I worked with to be
-          able to see themselves clearly, which is not something I could have faked caring about.
+          I used to keep all of that in a separate box from the professional work. I don't anymore.
+          The game design degree is why I understand motivation. The painting is why I think about
+          composition before colour, in pictures and in products. The counseling training is why I
+          believe a person's state when they arrive matters more than anything I put on a screen.
+          None of it was a detour.
         </p>
-
-        <h2>What I'm building toward</h2>
         <p>
-          I'm finishing my counseling license and working toward a trauma-informed practice. I build
-          things on the side, usually with whatever tooling is newest, because making something is
-          the fastest way for me to understand it. I also paint, illustrate, and write, and I've
-          stopped treating that as separate from the rest.
+          I live in Kansas City. I'm working toward a trauma-informed private practice, and I keep
+          the art and the more personal writing at
+          <a href="https://heartandhues.com" target="_blank" rel="noopener noreferrer">heartandhues.com</a>.
         </p>
 
         <p class="ab-contact">
@@ -95,7 +88,7 @@ import portrait from '../assets/img/selfie-creamcoat.jpeg';
     flex-direction: column;
     gap: 20px;
     max-width: 780px;
-    margin-bottom: 64px;
+    margin-bottom: 60px;
   }
 
   .ab-eyebrow {
@@ -109,21 +102,11 @@ import portrait from '../assets/img/selfie-creamcoat.jpeg';
     font-family: var(--serif);
     font-size: clamp(34px, 4.8vw, 58px);
     font-weight: 300;
+    font-style: italic;
     line-height: 1.08;
     letter-spacing: -0.02em;
     color: var(--ink);
     text-wrap: balance;
-  }
-
-  .ab-lede {
-    font-family: var(--serif);
-    font-size: clamp(18px, 2.2vw, 24px);
-    font-weight: 300;
-    font-style: italic;
-    line-height: 1.5;
-    color: var(--ink-soft);
-    border-left: 2px solid var(--teal);
-    padding-left: 20px;
   }
 
   .ab-grid {
@@ -175,6 +158,12 @@ import portrait from '../assets/img/selfie-creamcoat.jpeg';
     color: var(--ink-soft);
   }
 
+  .ab-prose a {
+    color: var(--teal);
+    text-decoration: none;
+    border-bottom: 0.5px solid var(--teal);
+  }
+
   .ab-pull {
     font-family: var(--serif);
     font-size: clamp(22px, 2.8vw, 30px) !important;
@@ -191,12 +180,6 @@ import portrait from '../assets/img/selfie-creamcoat.jpeg';
     margin-top: 18px;
     padding-top: 22px;
     border-top: 0.5px solid var(--ink-faint);
-  }
-
-  .ab-contact a {
-    color: var(--teal);
-    text-decoration: none;
-    border-bottom: 0.5px solid var(--teal);
   }
 
   @media (max-width: 900px) {

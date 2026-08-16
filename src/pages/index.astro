@@ -2,25 +2,11 @@
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import CaseCard from '../components/CaseCard.astro';
+import HowIWork from '../components/HowIWork.astro';
 import { cases } from '../data/cases.js';
 
 import portrait from '../assets/img/selfie-creamcoat.jpeg';
 import aboutPortrait from '../assets/img/selfie-blondie.JPG';
-
-const streams = [
-  {
-    name: 'Game design',
-    body: 'SMU Guildhall. How motivation works mechanically: open loops, curiosity gaps, progression, the difficulty curve nobody has to explain.',
-  },
-  {
-    name: 'Clinical training',
-    body: 'MA in Counseling, in practicum now. How people actually change, and what psychological safety requires before they will.',
-  },
-  {
-    name: 'A decade in K-12',
-    body: 'Learning platforms at scale. How any of it reaches a real teacher on a Tuesday morning in October.',
-  },
-];
 
 const building = [
   { name: 'Start Your Future', href: 'https://startyourfuture.org', note: 'Career exploration for teens' },
@@ -59,19 +45,27 @@ const building = [
         </summary>
         <div class="intro-more-body">
           <p>
-            The quickest path to sayin an edTech product has engaging student experience is to add badges,
+            The quickest path to marketing an edTech product as an engaging student experience is to add badges,
             avatars, and mini games. That can absolutely hold a student's attention. But does
             holding attention guarantee learning? Does it make the learning effective? Can you
             measure it?
           </p>
           <p>
-            Underneath the desire to capture a student's attention is a misconception. Engagement
-            doesn't start at login. It doesn't even start when a student walks into a classroom,
-            because they arrive already carrying something that may get in the way: what happened at
-            home that morning, whether they decided years ago that they're bad at math, whether this
-            is a room where being wrong is okay. A product meets a student somewhere in the middle
-            of all that, and most of the time it isn't on the product's radar at all. It is very
-            much on the educator's.
+            Underneath the desire to capture attention is a misconception. Engagement doesn't start
+            at login. It doesn't even start when a student walks into a classroom, because they
+            arrive already carrying something that may get in the way: what happened at home that
+            morning, whether they decided years ago that they're bad at math, whether this is a room
+            where being wrong is okay.
+          </p>
+          <p>
+            A product meets them somewhere in the middle of all that, and most products are not
+            built as though any of it exists. Teachers can see it in the room every day.
+          </p>
+          <p>
+            I've written this in the context of students, but it holds for anyone. A teacher who is
+            afraid of a new tool. A patient deciding whether to book the second appointment. A
+            designer being asked to assess their own skills. Everyone arrives already carrying
+            something.
           </p>
           <p>So that's where I start too.</p>
         </div>
@@ -93,17 +87,7 @@ const building = [
     </div>
   </section>
 
-  <section class="streams" data-reveal>
-    <div class="section-label">one claim, three kinds of evidence</div>
-    <div class="stream-grid">
-      {streams.map(({ name, body }) => (
-        <div class="stream">
-          <div class="stream-name">{name}</div>
-          <p class="stream-body">{body}</p>
-        </div>
-      ))}
-    </div>
-  </section>
+  <HowIWork />
 
   <section class="work-list" id="work" data-reveal>
     <div class="section-label">selected work</div>
@@ -307,32 +291,6 @@ const building = [
   .intro-cta:hover { background: var(--ink-soft); }
   .intro-cta:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
 
-  /* ---- streams ---- */
-  .streams {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 72px 48px;
-  }
-
-  .stream-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 40px;
-  }
-
-  .stream-name {
-    font-family: var(--serif);
-    font-size: 21px;
-    color: var(--ink);
-    margin-bottom: 10px;
-  }
-
-  .stream-body {
-    font-size: 14px;
-    line-height: 1.7;
-    color: var(--ink-muted);
-  }
-
   /* ---- work ---- */
   .work-list {
     max-width: 1200px;
@@ -472,7 +430,7 @@ const building = [
     .intro-side { display: contents; }
     .intro-portrait { order: -1; max-width: 200px; }
     .conclusion { order: 1; }
-    .streams, .work-list, .building { padding: 56px 24px; }
+    .work-list, .building { padding: 56px 24px; }
     .conclusion { max-width: none; padding-left: 20px; }
   }
 </style>
