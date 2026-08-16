@@ -5,10 +5,10 @@
   --warm-white: #faf7f2;
   --ink: #1a1614;
   --ink-soft: #3d3532;
-  --ink-muted: rgba(26,22,20,0.45);
-  --ink-faint: rgba(26,22,20,0.12);
-  --teal: #3a8c8a;
-  --teal-soft: rgba(58,140,138,0.12);
+  --ink-muted: rgba(26,22,20,0.62);
+  --ink-faint: rgba(26,22,20,0.22);
+  --teal: #2e7573;
+  --teal-soft: rgba(46,117,115,0.12);
   --amber: #c4863a;
   --serif: 'Cormorant Garamond', Georgia, serif;
   --sans: 'DM Sans', system-ui, sans-serif;
