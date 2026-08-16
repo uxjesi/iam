@@ -1,0 +1,275 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { summary, experience, education, skills } from '../data/resume.js';
+import { RESUME_PATH, RESUME_DOCX_PATH, EMAIL, LINKEDIN } from '../data/site.js';
+---
+
+<Layout
+  title="Résumé · Jessica Loredo"
+  description="Product design leader with 15+ years in product design and over a decade in K-12 edtech."
+>
+  <section class="resume">
+    <header class="rs-head">
+      <div class="rs-eyebrow">Résumé</div>
+      <h1 class="rs-name">Jessica Loredo</h1>
+      <p class="rs-summary">{summary}</p>
+
+      <div class="rs-actions">
+        <a class="pill pill-solid" href={RESUME_PATH} download>Download PDF</a>
+        <a class="pill" href={RESUME_DOCX_PATH} download>Download Word</a>
+        <a class="pill" href={`mailto:${EMAIL}`}>Email</a>
+        <a class="pill" href={LINKEDIN} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </header>
+
+    <div class="rs-section">
+      <h2 class="rs-label">Experience</h2>
+      <ol class="rs-jobs">
+        {experience.map(({ role, detail, org, dates, points }) => (
+          <li class="job">
+            <div class="job-meta">
+              <span class="job-org">{org}</span>
+              <span class="job-dates">{dates}</span>
+            </div>
+            <div class="job-body">
+              <h3>{role}</h3>
+              {detail && <p class="job-detail">{detail}</p>}
+              <ul>
+                {points.map((pt) => <li>{pt}</li>)}
+              </ul>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+
+    <div class="rs-section">
+      <h2 class="rs-label">Education</h2>
+      <ol class="rs-jobs">
+        {education.map(({ credential, org, dates, note }) => (
+          <li class="job">
+            <div class="job-meta">
+              <span class="job-org">{org}</span>
+              <span class="job-dates">{dates}</span>
+            </div>
+            <div class="job-body">
+              <h3>{credential}</h3>
+              {note && <p class="job-detail">{note}</p>}
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+
+    <div class="rs-section">
+      <h2 class="rs-label">Skills</h2>
+      <div class="rs-skills">
+        {skills.map(({ group, items }) => (
+          <div class="skill-group">
+            <h3>{group}</h3>
+            <ul>
+              {items.map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .resume {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 150px 48px 96px;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+  }
+
+  .rs-head {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .rs-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--teal);
+  }
+
+  .rs-name {
+    font-family: var(--serif);
+    font-size: clamp(38px, 5.2vw, 60px);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  .rs-summary {
+    font-size: 16.5px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    max-width: 64ch;
+  }
+
+  .rs-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 8px;
+  }
+
+  .pill {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
+    background: var(--teal-soft);
+    padding: 11px 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .pill:hover { background: rgba(46, 117, 115, 0.2); }
+  .pill:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+
+  .pill-solid {
+    background: var(--ink);
+    color: var(--warm-white);
+  }
+
+  .pill-solid:hover { background: var(--ink-soft); }
+
+  /* ---- sections ---- */
+  .rs-section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .rs-label {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .rs-label::after {
+    content: '';
+    flex: 1;
+    height: 0.5px;
+    background: var(--ink-faint);
+  }
+
+  .rs-jobs {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .job {
+    display: grid;
+    grid-template-columns: 230px minmax(0, 1fr);
+    gap: 36px;
+    padding: 26px 0;
+    border-top: 0.5px solid var(--ink-faint);
+  }
+
+  .job:last-child { border-bottom: 0.5px solid var(--ink-faint); }
+
+  .job-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .job-org {
+    font-family: var(--serif);
+    font-size: 19px;
+    color: var(--ink);
+    line-height: 1.25;
+  }
+
+  .job-dates {
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--ink-muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .job-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .job-body h3 {
+    font-size: 15.5px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .job-detail {
+    font-size: 13.5px;
+    color: var(--ink-muted);
+    margin-top: -6px;
+  }
+
+  .job-body ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-left: 18px;
+  }
+
+  .job-body li {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    max-width: 68ch;
+  }
+
+  .job-body li::marker { color: var(--ink-faint); }
+
+  /* ---- skills ---- */
+  .rs-skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 32px;
+  }
+
+  .skill-group h3 {
+    font-family: var(--serif);
+    font-size: 19px;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+
+  .skill-group ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .skill-group li {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 768px) {
+    .resume { padding: 116px 24px 72px; gap: 40px; }
+    .job { grid-template-columns: 1fr; gap: 12px; }
+  }
+</style>

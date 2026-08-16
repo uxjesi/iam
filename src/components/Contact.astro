@@ -1,0 +1,115 @@
+---
+import { LINKEDIN, EMAIL } from '../data/site.js';
+---
+
+<section class="contact" id="contact" data-reveal>
+  <div class="section-label">contact</div>
+
+  <div class="contact-grid">
+    <div class="contact-lead">
+      <h2>Let's talk</h2>
+      <p>
+        I'm open to product design leadership roles in learning, mental health, and
+        mission-driven work. If any of the above is the kind of thinking your team needs, I'd like
+        to hear about it.
+      </p>
+    </div>
+
+    <div class="contact-actions">
+      <a class="contact-email" href={`mailto:${EMAIL}`}>{EMAIL}</a>
+      <div class="contact-links">
+        <a href={LINKEDIN} target="_blank" rel="noopener noreferrer">
+          LinkedIn
+        </a>
+        <a href="/resume">Résumé</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 72px 48px 96px;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 56px;
+    align-items: end;
+    padding-top: 8px;
+    border-top: 0.5px solid var(--ink-faint);
+  }
+
+  .contact-lead {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 540px;
+    padding-top: 28px;
+  }
+
+  .contact-lead h2 {
+    font-family: var(--serif);
+    font-size: clamp(28px, 3.4vw, 40px);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+  }
+
+  .contact-lead p {
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+  }
+
+  .contact-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    padding-bottom: 4px;
+  }
+
+  .contact-email {
+    font-family: var(--serif);
+    font-size: clamp(20px, 2.4vw, 27px);
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 0.5px solid var(--ink-faint);
+    padding-bottom: 5px;
+    transition: border-color 0.2s;
+  }
+
+  .contact-email:hover { border-color: var(--teal); }
+  .contact-email:focus-visible { outline: 2px solid var(--teal); outline-offset: 4px; }
+
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .contact-links a {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
+    text-decoration: none;
+    background: var(--teal-soft);
+    padding: 10px 18px;
+    border-radius: 999px;
+    transition: background 0.2s;
+  }
+
+  .contact-links a:hover { background: rgba(46, 117, 115, 0.2); }
+  .contact-links a:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+
+  @media (max-width: 768px) {
+    .contact { padding: 56px 24px 72px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 28px; align-items: start; }
+  }
+</style>

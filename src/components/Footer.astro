@@ -1,12 +1,14 @@
 ---
+import { EMAIL, LINKEDIN } from '../data/site.js';
+
 const year = 2026;
 ---
 
-<footer id="contact">
+<footer>
   <div class="footer-name">© {year} Jessica Loredo</div>
   <div class="footer-links">
-    <a href="mailto:jessica@jessicaloredo.com">Email</a>
-    <a href="#">Instagram</a>
-    <a href="#">LinkedIn</a>
+    <a href={`mailto:${EMAIL}`}>Email</a>
+    <a href="/resume">Résumé</a>
+    <a href={LINKEDIN} target="_blank" rel="noopener noreferrer">LinkedIn</a>
   </div>
 </footer>
