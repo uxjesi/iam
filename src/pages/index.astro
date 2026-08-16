@@ -36,16 +36,21 @@ const building = [
     <div class="intro-head" data-stage="1">
       <h1 class="intro-name">Jessica Loredo</h1>
       <p class="intro-role">
-        Product Design Leader. 15+ years in product design, over a decade of it in EdTech, with a
-        background in game design and psychology.
+        With 15 years in product design, a decade in EdTech, and a
+        background in game design, and counseling psychology — I build systems that put humans first. 
       </p>
     </div>
 
     <div class="intro-argument" data-stage="2">
       <p>
-        After over a decade building for teachers and students, I've watched the word <em>engagement</em> get thrown around like a magic bullet. Product leaders sounded like they were on board with
-        defining what it meant, and then routinely skipped past asking the right questions.
+        In my time in edTech, I've watched the word <em>engagement</em> get thrown around until it lost all meaning. Product leaders sounded like they were on board with
+        defining what it meant, and then routinely skipped past the hard part — asking the right questions.
       </p>
+
+      <p>
+        When looking at the problem through multiple lenses, I came to realize that engagement isn't just a product feature, it's a psychological state first. 
+      </p>
+
 
       <details class="intro-more">
         <summary>
@@ -54,8 +59,8 @@ const building = [
         </summary>
         <div class="intro-more-body">
           <p>
-            The quickest path to calling yourself an engaging student experience is to add badges,
-            avatars, and mini games, and that can absolutely hold a student's attention. But does
+            The quickest path to sayin an edTech product has engaging student experience is to add badges,
+            avatars, and mini games. That can absolutely hold a student's attention. But does
             holding attention guarantee learning? Does it make the learning effective? Can you
             measure it?
           </p>
@@ -73,17 +78,18 @@ const building = [
       </details>
     </div>
 
-    <div class="conclusion" data-stage="3">
-      <p class="conclusion-line">
-        Engagement is a psychological state before it's a product feature.
-      </p>
-    </div>
-
     <a href="#work" class="intro-cta" data-stage="4">See the work</a>
     </div>
 
-    <div class="intro-portrait" data-stage="1">
-      <Image src={portrait} alt="Jessica Loredo" width={720} />
+    <div class="intro-side">
+      <div class="intro-portrait" data-stage="1">
+        <Image src={portrait} alt="Jessica Loredo" width={720} />
+      </div>
+      <div class="conclusion" data-stage="3">
+        <p class="conclusion-line">
+          Engagement is a psychological state before it's a product feature.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -145,8 +151,8 @@ const building = [
     margin: 0 auto;
     padding: 150px 48px 88px;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 300px;
-    gap: 72px;
+    grid-template-columns: minmax(0, 1fr) 400px;
+    gap: 64px;
     align-items: start;
   }
 
@@ -156,6 +162,12 @@ const building = [
     align-items: flex-start;
     gap: 40px;
     min-width: 0;
+  }
+
+  .intro-side {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
   }
 
   .intro-portrait :global(img) {
@@ -186,7 +198,7 @@ const building = [
     font-size: 15px;
     line-height: 1.7;
     color: var(--ink-soft);
-    max-width: 46ch;
+    max-width: 60ch;
   }
 
   .intro-argument {
@@ -217,15 +229,14 @@ const building = [
     flex-direction: column;
     gap: 14px;
     border-left: 2px solid var(--teal);
-    padding: 4px 0 4px 26px;
-    max-width: 640px;
+    padding: 2px 0 2px 22px;
   }
 
   .conclusion-line {
     font-family: var(--serif);
-    font-size: clamp(25px, 3.4vw, 40px);
+    font-size: clamp(21px, 2.3vw, 29px);
     font-weight: 300;
-    line-height: 1.22;
+    line-height: 1.28;
     letter-spacing: -0.012em;
     color: var(--ink);
     text-wrap: balance;
@@ -457,8 +468,10 @@ const building = [
       grid-template-columns: 1fr;
       gap: 32px;
     }
-    .intro-main { gap: 32px; }
+    .intro-main { gap: 32px; order: 0; }
+    .intro-side { display: contents; }
     .intro-portrait { order: -1; max-width: 200px; }
+    .conclusion { order: 1; }
     .streams, .work-list, .building { padding: 56px 24px; }
     .conclusion { max-width: none; padding-left: 20px; }
   }
