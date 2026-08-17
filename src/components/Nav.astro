@@ -1,4 +1,6 @@
 ---
+import Initials from '../assets/img/initials-logo.svg';
+
 // The three-door split is gone. The site makes one argument, so the nav
 // shouldn't offer three versions of the person making it.
 const links = [
@@ -14,7 +16,10 @@ const current = Astro.url.pathname.replace(/\/+$/, '') || '/';
 ---
 
 <nav>
-  <a href="/" class="nav-name">Jessica Loredo</a>
+  <a href="/" class="nav-name">
+    <Initials class="nav-mark" aria-hidden="true" />
+    <span>Jessica Loredo</span>
+  </a>
   <ul class="nav-links">
     {links.map(({ href, label }) => (
       <li>
@@ -27,5 +32,25 @@ const current = Astro.url.pathname.replace(/\/+$/, '') || '/';
 <style>
   .nav-links a[aria-current='page'] {
     color: var(--ink);
+  }
+
+  /* .nav-name carries color from global.css, so the mark inherits it. */
+  .nav-name {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+  }
+
+  .nav-mark {
+    width: 27px;
+    height: 27px;
+    flex-shrink: 0;
+    display: block;
+    fill: currentColor;
+  }
+
+  @media (max-width: 768px) {
+    .nav-name { gap: 9px; }
+    .nav-mark { width: 23px; height: 23px; }
   }
 </style>
