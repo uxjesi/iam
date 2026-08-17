@@ -1,39 +1,39 @@
 ---
-const principles = [
+const questions = [
   {
-    q: 'What would reduce barriers to access?',
-    body: 'Reach is usually capped by something other than interest. At one high school it was teacher confidence, not student appetite. Find the real cap first.',
+    q: "What's actually creating the barrier?",
+    body: 'Not friction in the UI sense alone — this includes accessibility, socioeconomic access, and constraints the user may not name out loud.',
   },
   {
-    q: 'How do I meet this person where they are, emotionally, physically, and mindfully?',
-    body: 'Physically counts. K-2 students tapping haphazardly on tablets was a dexterity problem that looked like an engagement problem until we watched them.',
+    q: 'Where is this person in their life, and how does that change what they need?',
+    body: "People aren't a monolith across a lifespan, a role, or a level of experience. Design for the band, not the average.",
   },
   {
-    q: 'How does their stage of life change how they learn?',
-    body: 'A six year old and a ten year old are not the same user, and neither are a first year teacher and a twenty year veteran. Design for the band, not the average.',
+    q: 'What is this person carrying emotionally before they even start?',
+    body: "The goal is rarely the obstacle. What's standing between someone and their starting point usually is.",
   },
 ];
 
 const process = [
   {
     step: 'Discover',
-    body: 'Ask the right questions, then test whether they are the right questions. Read the research, read the market, pay attention to what is happening outside the building.',
+    body: "Ask the right questions, then test whether they're the right ones. Read the research, read the market, pay attention to what's happening outside the building.",
   },
   {
     step: 'Define',
-    body: 'Decide what success means and be rigorous about it before anything gets built. A metric chosen after launch is a metric chosen to look good.',
+    body: 'Decide what success means, and be rigorous about it before anything gets built. A metric chosen after launch is a metric chosen to look good.',
   },
   {
     step: 'Scope',
-    body: 'Don\'t try to solve the world. Pick a few problems, solve them properly, and build from there. Breadth is how good products become mediocre ones.',
+    body: "Don't try to solve the world. Pick a few problems, solve them properly, and build from there. Scope creep is how good products become mediocre ones.",
   },
   {
     step: 'Prototype',
-    body: 'With product, engineering, and curriculum in the room. Adobe through Cursor and Claude, shipped to a sandbox or Vercel, against an AI-friendly design system. The prototype linked in my Experience case study was built this way, and so were the products in the section below.',
+    body: "With the people who'll build and deliver it in the room — engineering, product, and the subject matter experts who own the domain. Ship to a local sandbox or something like Vercel, leveraging AI-friendly design systems. The prototype linked in my Experience case study was built this way, and so were the projects below.",
   },
   {
     step: 'Test where the work happens',
-    body: 'A teacher in her own classroom, fielding three other students mid-task, tells you more than a recruited participant behind glass who set aside a clean hour. Both are useful. The second is rare and worth arranging.',
+    body: 'A frontline user in their actual environment, mid-task, distracted, three other things demanding attention, tells you more than a recruited participant behind glass with a clean hour set aside. Both are useful. The second is rare and worth arranging.',
   },
 ];
 ---
@@ -41,32 +41,44 @@ const process = [
 <section class="how" data-reveal>
   <div class="section-label">how I work</div>
 
-  <div class="how-intro">
-    <h2>Three questions, whatever I'm building</h2>
-    <p>
-      These are the questions I bring to a problem before I have any idea what the answer looks
-      like. They hold whether the person on the other side is eight years old, teaching third
-      period, or sitting in a waiting room.
+  <div class="how-part">
+    <div class="part-head">
+      <h2>The Heart</h2>
+      <p>
+        There are many ways to approach problem solving from a design perspective. But there are
+        three questions I keep at the heart of my own process. They hold true regardless of
+        population, and they stem from my own values as a helper.
+      </p>
+    </div>
+
+    <ol class="questions">
+      {questions.map(({ q, body }) => (
+        <li class="question">
+          <h3>{q}</h3>
+          <p>{body}</p>
+        </li>
+      ))}
+    </ol>
+
+    <p class="transition">
+      Those questions shape what gets built. This is how it actually gets built.
     </p>
   </div>
 
-  <ol class="principles">
-    {principles.map(({ q, body }) => (
-      <li class="principle">
-        <h3>{q}</h3>
-        <p>{body}</p>
-      </li>
-    ))}
-  </ol>
-
-  <div class="how-process">
-    <div class="process-head">
-      <h2>And a process I actually follow</h2>
+  <div class="how-part">
+    <div class="part-head">
+      <h2>The Logistics</h2>
       <p>
-        I know a product has to be paid for. I've worked on the flagship that keeps the lights on,
-        and I've learned that influence, storytelling, and clear communication are what let a design
-        decision survive contact with a business. Values that can't be shipped aren't worth much.
+        Values only matter if they survive contact with a business. Influence, storytelling, and
+        clear communication are what let a design decision actually ship, not just get approved in a
+        meeting.
       </p>
+    </div>
+  </div>
+
+  <div class="how-part">
+    <div class="part-head">
+      <h2>The Process</h2>
     </div>
 
     <dl class="steps">
@@ -79,9 +91,11 @@ const process = [
     </dl>
 
     <p class="how-note">
-      One thing that has genuinely changed: the handoff got short. Work that used to live in Figma
-      now often goes straight into code against a design system, so there is far less to translate
-      and considerably more time for edge cases and polish. That part is a real improvement.
+      One thing that has genuinely changed: the handoff got shorter. Work that used to live in Figma
+      now often goes straight into code against a design system, far less to translate and
+      considerably more time for edge cases and polish. It also makes the Discover and Define phases
+      arguably more important, not less. When execution is faster, the cost of solving the wrong
+      problem well goes up.
     </p>
   </div>
 </section>
@@ -93,15 +107,20 @@ const process = [
     padding: 72px 48px;
     display: flex;
     flex-direction: column;
-    gap: 44px;
+    gap: 48px;
   }
 
-  .how-intro,
-  .process-head {
+  .how-part {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    max-width: 620px;
+    gap: 28px;
+  }
+
+  .part-head {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 640px;
   }
 
   .how h2 {
@@ -111,37 +130,35 @@ const process = [
     line-height: 1.15;
     letter-spacing: -0.012em;
     color: var(--ink);
-    text-wrap: balance;
   }
 
-  .how-intro p,
-  .process-head p {
+  .part-head p {
     font-size: 16px;
     line-height: 1.75;
     color: var(--ink-soft);
   }
 
-  /* ---- principles ---- */
-  .principles {
+  /* ---- the three questions ---- */
+  .questions {
     list-style: none;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1px;
     background: var(--ink-faint);
     border: 0.5px solid var(--ink-faint);
-    counter-reset: principle;
+    counter-reset: question;
   }
 
-  .principle {
+  .question {
     background: var(--warm-white);
     padding: 28px 24px;
     display: flex;
     flex-direction: column;
     gap: 12px;
-    counter-increment: principle;
+    counter-increment: question;
   }
 
-  .principle h3 {
+  .question h3 {
     font-family: var(--serif);
     font-size: 21px;
     font-weight: 400;
@@ -150,8 +167,8 @@ const process = [
     text-wrap: balance;
   }
 
-  .principle h3::before {
-    content: counter(principle, decimal-leading-zero);
+  .question h3::before {
+    content: counter(question, decimal-leading-zero);
     display: block;
     font-family: var(--sans);
     font-size: 10px;
@@ -160,25 +177,26 @@ const process = [
     margin-bottom: 12px;
   }
 
-  .principle p {
+  .question p {
     font-size: 14px;
     line-height: 1.7;
     color: var(--ink-muted);
   }
 
-  /* ---- process ---- */
-  .how-process {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    padding-top: 24px;
-    border-top: 0.5px solid var(--ink-faint);
+  .transition {
+    font-family: var(--serif);
+    font-size: clamp(18px, 2vw, 22px);
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    max-width: 54ch;
   }
 
+  /* ---- process ---- */
   .steps {
     display: flex;
     flex-direction: column;
-    gap: 0;
   }
 
   .step {
@@ -205,18 +223,18 @@ const process = [
     font-size: 15px;
     line-height: 1.75;
     color: var(--ink-soft);
-    max-width: 60ch;
+    max-width: 62ch;
   }
 
   .how-note {
     font-size: 14.5px;
     line-height: 1.75;
     color: var(--ink-muted);
-    max-width: 66ch;
+    max-width: 68ch;
   }
 
   @media (max-width: 768px) {
-    .how { padding: 56px 24px; gap: 34px; }
+    .how { padding: 56px 24px; gap: 36px; }
     .step { grid-template-columns: 1fr; gap: 6px; }
   }
 </style>

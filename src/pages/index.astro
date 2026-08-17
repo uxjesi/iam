@@ -30,14 +30,14 @@ const building = [
 
     <div class="intro-argument" data-stage="2">
       <p>
-        In my time in edTech, I've watched the word <em>engagement</em> get thrown around until it lost all meaning. Product leaders sounded like they were on board with
-        defining what it meant, and then routinely skipped past the hard part — asking the right questions.
+        In my time in edTech, I've watched the word <em>engagement</em> get thrown around until it lost most of its meaning. Product leaders sounded on board with
+        defining it, then routinely skipped the hard part — asking the right questions.
       </p>
-
       <p>
-        When looking at the problem through multiple lenses, I came to realize that engagement isn't just a product feature, it's a psychological state first. 
+        I approach design problems through multiple lenses: game design principles, product
+        strategy, learning science, and human development. What that's taught me is that engagement
+        isn't a product feature. It's a psychological state first.
       </p>
-
 
       <details class="intro-more">
         <summary>
@@ -46,27 +46,23 @@ const building = [
         </summary>
         <div class="intro-more-body">
           <p>
-            The quickest path to marketing an edTech product as an engaging student experience is to add badges,
-            avatars, and mini games. That can absolutely hold a student's attention. But does
-            holding attention guarantee learning? Does it make the learning effective? Can you
-            measure it?
+            For the past 5 to 10 years, the quickest path to marketing an engaging experience has
+            been badges, avatars, mini-games. That can hold attention for a while. But does holding
+            attention guarantee learning, or change, or growth? Can you even measure it?
           </p>
           <p>
-            Underneath the desire to capture attention is a misconception. Engagement doesn't start
-            at login. It doesn't even start when a student walks into a classroom, because they
-            arrive already carrying something that may get in the way: what happened at home that
-            morning, whether they decided years ago that they're bad at math, whether this is a room
-            where being wrong is okay.
+            Underneath the desire to capture attention is a misconception: engagement doesn't start
+            at login. Every person arrives already carrying something — what happened before they
+            opened the app, a story they've told themselves for years about what they're capable of,
+            whether this is a place where being wrong is safe.
           </p>
           <p>
-            A product meets them somewhere in the middle of all that, and most products are not
-            built as though any of it exists. Teachers can see it in the room every day.
-          </p>
-          <p>
-            I've written this in the context of students, but it holds for anyone. A teacher who is
-            afraid of a new tool. A patient deciding whether to book the second appointment. A
-            designer being asked to assess their own skills. Everyone arrives already carrying
-            something.
+            Most digital products are built as if none of that exists. The people closest to the
+            work — teachers, clinicians, frontline staff — see it every day. It's not unique to
+            classrooms. It applies to a patient deciding whether to book a second appointment, a
+            professional being asked to assess their own skills, a new hire finding their footing.
+            Everyone arrives carrying something. To actually help someone grow, the environment has
+            to meet them there first.
           </p>
           <p>So that's where I start too.</p>
         </div>
@@ -79,11 +75,6 @@ const building = [
     <div class="intro-side">
       <div class="intro-portrait" data-stage="1">
         <Image src={portrait} alt="Jessica Loredo" width={720} />
-      </div>
-      <div class="conclusion" data-stage="3">
-        <p class="conclusion-line">
-          Engagement is a psychological state before it's a product feature.
-        </p>
       </div>
     </div>
   </section>
@@ -100,7 +91,7 @@ const building = [
   <section class="building" data-reveal>
     <div class="section-label">also building</div>
     <p class="building-lede">
-      Independent products, designed and shipped end to end. Strategy is easier to claim than a
+      Independent projects, designed and shipped end to end. Strategy is easier to claim than a
       thing people can open.
     </p>
     <ul class="build-list">
@@ -196,25 +187,6 @@ const building = [
     color: var(--ink);
   }
 
-  /* The claim reads as a conclusion the paragraphs above earn, so it's set
-     apart rather than set enormous. */
-  .conclusion {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    border-left: 2px solid var(--teal);
-    padding: 2px 0 2px 22px;
-  }
-
-  .conclusion-line {
-    font-family: var(--serif);
-    font-size: clamp(21px, 2.3vw, 29px);
-    font-weight: 300;
-    line-height: 1.28;
-    letter-spacing: -0.012em;
-    color: var(--ink);
-    text-wrap: balance;
-  }
 
   /* Disclosure keeps the landing short without hiding anything from a reader
      who has JS off: <details> works natively. */
@@ -404,9 +376,7 @@ const building = [
     .intro-main { gap: 32px; order: 0; }
     .intro-side { display: contents; }
     .intro-portrait { order: -1; max-width: 200px; }
-    .conclusion { order: 1; }
     .work-list, .building { padding: 56px 24px; }
-    .conclusion { max-width: none; padding-left: 20px; }
   }
 </style>
 
