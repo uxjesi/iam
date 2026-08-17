@@ -1,4 +1,6 @@
 ---
+import logos from '../assets/img/inline-logos.svg';
+
 const questions = [
   {
     q: "What's actually creating the barrier?",
@@ -32,7 +34,7 @@ const process = [
     body: "With the people who'll build and deliver it in the room — engineering, product, and the subject matter experts who own the domain. Ship to a local sandbox or something like Vercel, leveraging AI-friendly design systems. The prototype linked in my Experience case study was built this way, and so were the projects below.",
   },
   {
-    step: 'Test where the work happens',
+    step: 'Test',
     body: 'A frontline user in their actual environment, mid-task, distracted, three other things demanding attention, tells you more than a recruited participant behind glass with a clean hour set aside. Both are useful. The second is rare and worth arranging.',
   },
 ];
@@ -65,7 +67,7 @@ const process = [
     </p>
   </div>
 
-  <div class="how-part">
+  <div class="how-part how-part-split">
     <div class="part-head">
       <h2>The Logistics</h2>
       <p>
@@ -74,6 +76,10 @@ const process = [
         meeting. That means knowing the tech stack you're designing into, how the product is
         actually sold, and where the real constraints are, typically, budget, timeline, or politics.
       </p>
+    </div>
+
+    <div class="logo-strip">
+      <img src={logos.src} alt="Figma, Claude, Cursor, Astro, and GitHub" width={logos.width} height={logos.height} />
     </div>
   </div>
 
@@ -117,10 +123,25 @@ const process = [
     gap: 28px;
   }
 
+  /* Logistics runs beside the logo strip rather than full width. */
+  .how-part-split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 380px;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .logo-strip img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
   .part-head {
     display: flex;
     flex-direction: column;
     gap: 14px;
+    max-width: 600px; 
   }
 
   .how h2 {
@@ -234,6 +255,15 @@ const process = [
     color: var(--ink-muted);
     max-width: 860px;
     text-wrap: pretty;
+  }
+
+  @media (max-width: 900px) {
+    .how-part-split {
+      grid-template-columns: 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+    .logo-strip { max-width: 420px; }
   }
 
   @media (max-width: 768px) {
