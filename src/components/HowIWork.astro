@@ -78,9 +78,10 @@ const process = [
       </p>
     </div>
 
-    <div class="logo-strip">
+    <figure class="logo-strip">
       <img src={logos.src} alt="Figma, Claude, Cursor, Astro, and GitHub" width={logos.width} height={logos.height} />
-    </div>
+      <figcaption>An example workflow I use</figcaption>
+    </figure>
   </div>
 
   <div class="how-part">
@@ -131,10 +132,24 @@ const process = [
     align-items: center;
   }
 
+  .logo-strip {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
   .logo-strip img {
     width: 100%;
     height: auto;
     display: block;
+  }
+
+  .logo-strip figcaption {
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    text-align: center;
   }
 
   .part-head {
