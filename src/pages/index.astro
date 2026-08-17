@@ -76,6 +76,11 @@ const building = [
       <div class="intro-portrait" data-stage="1">
         <Image src={portrait} alt="Jessica Loredo" width={720} />
       </div>
+      <div class="conclusion" data-stage="3">
+        <p class="conclusion-line">
+          Engagement is a psychological state before it's a product feature.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -187,6 +192,26 @@ const building = [
     color: var(--ink);
   }
 
+
+  /* The claim also runs inline in the opening; here it works as the anchor
+     under the portrait, so it's set apart rather than set enormous. */
+  .conclusion {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    border-left: 2px solid var(--teal);
+    padding: 2px 0 2px 22px;
+  }
+
+  .conclusion-line {
+    font-family: var(--serif);
+    font-size: clamp(21px, 2.3vw, 29px);
+    font-weight: 300;
+    line-height: 1.28;
+    letter-spacing: -0.012em;
+    color: var(--ink);
+    text-wrap: balance;
+  }
 
   /* Disclosure keeps the landing short without hiding anything from a reader
      who has JS off: <details> works natively. */
@@ -376,6 +401,7 @@ const building = [
     .intro-main { gap: 32px; order: 0; }
     .intro-side { display: contents; }
     .intro-portrait { order: -1; max-width: 200px; }
+    .conclusion { order: 1; }
     .work-list, .building { padding: 56px 24px; }
   }
 </style>
