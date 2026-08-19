@@ -23,20 +23,34 @@ const building = [
     <div class="intro-head" data-stage="1">
       <h1 class="intro-name">Jessica Loredo</h1>
       <p class="intro-role">
-        With 15 years in product design, a decade in EdTech, and a
-        background in game design, and counseling psychology — I build systems that put humans first. 
+        I have 15 years in product design, a decade in EdTech, a
+        background in both game design and counseling psychology. I build systems that put humans first. 
       </p>
     </div>
 
     <div class="intro-argument" data-stage="2">
-      <p>
-        In my time in edTech, I've watched the word <em>engagement</em> get thrown around until it lost most of its meaning. Product leaders sounded on board with
-        defining it, then routinely skipped the hard part — asking the right questions.
+      <p class="opening-question">
+        What do digital product design and clinical counseling have in common?
       </p>
       <p>
-        I approach design problems through multiple lenses: game design principles, product
-        strategy, learning science, and human development. What that's taught me is that engagement
-        isn't a product feature. It's a psychological state first.
+        On the surface, very little. One industry focuses on shipping products to fill market gaps;
+        the other supports people through complex human experiences.
+      </p>
+      <p>
+        Look closer, though, and the boundary disappears. Across 15 years spanning design,
+        educational applications, and mental health counseling, I've learned that these fields
+        aren't separate lanes — they are different applications of the exact same foundation:
+        empathy.
+      </p>
+      <p>
+        Empathy shouldn't be a soft skill taking a backseat to product strategy, nor is it just a
+        buzzword in a therapeutic setting. It's the core construct we should build from when
+        designing for humans. When we start with empathy, or understanding what someone needs,
+        helping them achieve it becomes clearer.
+      </p>
+      <p>
+        It isn't about handing anyone a shortcut; it's about providing the right conditions so they
+        can get unstuck and move forward with their own goals, on their own terms.
       </p>
 
       <details class="intro-more">
@@ -46,25 +60,30 @@ const building = [
         </summary>
         <div class="intro-more-body">
           <p>
-            For the past 5 to 10 years, the quickest path to marketing an engaging experience has
-            been badges, avatars, mini-games. That can hold attention for a while. But does holding
-            attention guarantee learning, or change, or growth? Can you even measure it?
+            During my time in EdTech, I listened to many product leaders ask their teams to build
+            "engaging" experiences without fully examining what that actually requires. The problem
+            is that over the past decade or so the word <em>engagement</em> became a catch-all term for badges,
+            avatars, and streak mechanics. In other words, shallow features instead of actual
+            empathy-informed design that supports a student where they're at. And while some of
+            those game mechanics can look engaging on the outside, attention isn't the same as
+            learning. You can capture one without ever earning the other.
           </p>
           <p>
-            Underneath the desire to capture attention is a misconception: engagement doesn't start
-            at login. Every person arrives already carrying something — what happened before they
-            opened the app, a story they've told themselves for years about what they're capable of,
-            whether this is a place where being wrong is safe.
+            That's because engagement isn't really a product feature; it's a psychological state. To
+            cultivate it, you have to sit with a person, listen, attune, and seek genuine
+            understanding.
           </p>
           <p>
-            Most digital products are built as if none of that exists. The people closest to the
-            work — teachers, clinicians, frontline staff — see it every day. It's not unique to
-            classrooms. It applies to a patient deciding whether to book a second appointment, a
-            professional being asked to assess their own skills, a new hire finding their footing.
-            Everyone arrives carrying something. To actually help someone grow, the environment has
-            to meet them there first.
+            I love building tools that empower people just as much as I value being in a room to
+            support someone one-on-one. Outside my primary work, I've created platforms for makers,
+            self-exploration tools, experiences helping teenagers see who they can become, and
+            accessible ways to match people with the right therapist.
           </p>
-          <p>So that's where I start too.</p>
+          <p>
+            Across every project, I start with the exact same question: what is this person
+            carrying, and how do I help them set it down so they can move forward more easily?
+          </p>
+          <p class="bridge">So, how do I empathize?</p>
         </div>
       </details>
     </div>
@@ -78,7 +97,7 @@ const building = [
       </div>
       <div class="conclusion" data-stage="3">
         <p class="conclusion-line">
-          Engagement is a psychological state before it's a product feature.
+          Empathy isn't a soft skill. It's the construct we build from.
         </p>
       </div>
     </div>
@@ -184,6 +203,27 @@ const building = [
     font-size: 17px;
     line-height: 1.8;
     color: var(--ink-soft);
+    padding-top: 4px;
+  }
+
+  .intro-argument p.opening-question {
+    font-family: var(--serif);
+    font-size: clamp(25px, 3.1vw, 35px);
+    font-weight: 300;
+    line-height: 1.18;
+    letter-spacing: -0.012em;
+    color: var(--ink);
+    text-wrap: balance;
+    padding-top: 0;
+    margin-bottom: 4px;
+  }
+
+  .intro-more-body p.bridge {
+    font-family: var(--serif);
+    font-size: clamp(19px, 2.1vw, 23px);
+    font-style: italic;
+    line-height: 1.4;
+    color: var(--ink);
     padding-top: 4px;
   }
 
